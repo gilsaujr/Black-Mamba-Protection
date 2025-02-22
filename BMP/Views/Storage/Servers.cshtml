@@ -1,0 +1,102 @@
+﻿@using BMP;
+@using BMP.Models;
+@model IEnumerable<ServerInViewModel>
+@{
+    ViewBag.Title = "Servers";
+}
+
+@section scripts{
+    <script src="~/scripts/server.js"></script>
+}
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<a id="delSelected" href="#modal_del_confirm" data-toggle="modal" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-remove"></span>&nbsp;Delete Selected</a>
+<a id="btn_add_server" href="#modal_add_server" data-toggle="modal" class="btn btn-sm btn-primary pull-right"><span class="glyphicon glyphicon-plus"></span> Add Server</a>
+<table class="table table-striped">
+    <tr>
+        <th class="text-center"><input type="checkbox" id="chkAll" /></th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>IP Address</th>
+        <th>Save File Path</th>
+        <th>Doc Retention Period</th>
+        <th>Space Available</th>
+        <th>Space Used</th>
+        <th class="text-center">Actions</th>
+    </tr>
+    @foreach(ServerInViewModel server in Model)
+    {
+        <tr>
+            <td class="text-center"><input type="checkbox" id="chkServer" name="chkServer" data-id="@server.Id" /></td>
+            <td>@server.Id</td>
+            <td>@server.ServerName</td>
+            <td>@server.IPaddress</td>
+            <td>@server.SaveFilePath</td>
+            <td>@server.SaveDays</td>
+            <td>@server.SpaceAvail</td>
+            <td>@server.SpaceUsed</td>
+            <td class="text-center">
+                <a href="#modal_add_server" data-toggle="modal" class="edit_server glyphicon glyphicon-pencil" data-id="@server.Id" data-name="@server.ServerName" data-ip-address="@server.IPaddress" data-save-file-path="@server.SaveFilePath" data-save-days="@server.SaveDays" title="edit details"></a>
+                <a class="rem_server btn btn-sm" data-id="@server.Id" title="remove"><span class="glyphicon glyphicon-remove"></span></a>
+            </td>
+        </tr>
+    }
+</table>
+
+<form id="frmServer" action="~/storage/servers" method="post">
+    <div class="modal fade" id="modal_add_server" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header grad2">
+                    <a href="#" id="closeFPwd" class="btn btn-default pull-right" data-dismiss="modal">X</a>
+                    <h4 id="title_add_server">Add Server</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <span class="input-group-addon">Name</span>
+                        <input type="text" id="txt_server_name" name="ServerName" class="form-control" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">IP Address</span>
+                        <input type="text" id="txt_ip_address" name="IPaddress" class="form-control" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Save File Path</span>
+                        <input type="text" id="txt_save_file_path" name="SaveFilePath" class="form-control" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Doc Retention Period</span>
+                        <input type="text" id="txt_save_days" name="SaveDays" class="form-control" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span class="btn btn-sm btn-primary" id="btn_add_server_modal">Add Server</span>
+                    <span class="btn btn-sm btn-primary" id="btn_update_server_modal">Update Server</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" id="hid_server_id" name="serverId" />
+    <input type="hidden" id="hid_del_servers" name="delServers" />
+</form>
+
+<div class="modal fade" id="modal_del_confirm" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header grad2">
+                <a href="#" class="btn btn-default pull-right" data-dismiss="modal">X</a>
+                <h4>Delete Servers Selected</h4>
+            </div>
+            <div class="modal-body">
+                These servers will be permanently deleted and cannot be recovered. Are you sure you want to proceed?
+            </div>
+            <div class="modal-footer">
+                <span class="btn btn-sm btn-primary" id="del_confirm_proceed">Proceed</span>
+                <span class="btn btn-sm btn-primary" data-dismiss="modal">Cancel</span>
+            </div>
+        </div>
+    </div>
+</div>

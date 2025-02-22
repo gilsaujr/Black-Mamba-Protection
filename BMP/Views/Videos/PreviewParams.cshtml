@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "Preview Parameters";
+}
+
+<p>&nbsp;</p>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading head1">VIDEO</div>
+                <div class="panel-body">
+                    <div class="input-group">
+                        <span class="input-group-addon">Video Data Rate</span>
+                        <input type="text" class="form-control" id="txt_vid_data_rate" />
+                        <span class="input-group-addon">kbps</span>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Video Preview Width</span>
+                        <input type="text" class="form-control" id="txt_vid_prev_width" />
+                        <span class="input-group-addon">pixels</span>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Video Preview Height</span>
+                        <input type="text" class="form-control" id="txt_vid_prev_height" />
+                        <span class="input-group-addon">pixels</span>
+                    </div>
+                    <div class="label2"><input type="checkbox" id="chk_use_orig_img_size" /> Use original image size?</div>
+                    <p>&nbsp;</p>
+                    <div class="input-group">
+                        <span class="input-group-addon">Extraction Frame Width</span>
+                        <input type="text" class="form-control" id="txt_ext_frame_width" />
+                        <span class="input-group-addon">pixels</span>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Extraction Frame Height</span>
+                        <input type="text" class="form-control" id="txt_ext_frame_height" />
+                        <span class="input-group-addon">pixels</span>
+                    </div>
+                    <p>&nbsp;</p>
+                    <div class="input-group">
+                        <span class="input-group-addon">Audio Data Rate</span>
+                        <input type="text" class="form-control" id="txt_audio_data_rate" />
+                        <span class="input-group-addon">kbps</span>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Audio Frequency</span>
+                        <input type="text" class="form-control" id="txt_audio_freq" />
+                        <span class="input-group-addon">Hz</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading head1">PICTURE</div>
+                <div class="panel-body">
+                    <div class="input-group">
+                        <span class="input-group-addon">Preview Picture Width</span>
+                        <input type="text" class="form-control" id="txt_prev_pic_width" />
+                        <span class="input-group-addon">pixels</span>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Preview Picture Height</span>
+                        <input type="text" class="form-control" id="txt_prev_pic_height" />
+                        <span class="input-group-addon">pixels</span>
+                    </div>
+                </div>
+            </div>
+            <p>&nbsp;</p>
+            <div class="panel panel-default">
+                <div class="panel-heading head1">AUDIO</div>
+                <div class="panel-body">
+                    <div class="input-group">
+                        <span class="input-group-addon">Audio Data Rate</span>
+                        <input type="text" class="form-control" id="txt_audio_data_rate2" />
+                        <span class="input-group-addon">kbps</span>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Audio Frequency</span>
+                        <input type="text" class="form-control" id="txt_audio_freq2" />
+                        <span class="input-group-addon">Hz</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="panel panel-default">
+                <div class="panel-heading head1">ALL</div>
+                <div class="panel-body">
+                    <div class="label2"><input type="checkbox" checked="checked" id="chk_wea_gen_prev" /> Weather Generating Preview?</div>
+                </div>
+            </div>
+            <p>&nbsp;</p>
+            <span class="btn btn-sm btn-primary pull-right">SAVE</span>
+        </div>
+    </div>
+</div>

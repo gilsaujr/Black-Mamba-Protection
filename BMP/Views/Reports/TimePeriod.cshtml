@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Time Period Report";
+}
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">Date</span>
+                        <input type="text" class="form-control" id="txt_DateFrom" name="txt_DateFrom" placeholder="FROM (12/31/9999)" /><input type="text" class="form-control" id="txt_DateTo" name="txt_DateTo" placeholder="TO (12/31/9999)" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Level</span>
+                        <select class="form-control" id="sel_level" name="sel_level">
+                            <option value="">select level</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">Police No</span>
+                        <input type="text" class="form-control" id="txt_police_no" name="txt_police_no">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Police Name</span>
+                        <input type="text" class="form-control" id="txt_police_name" name="txt_police_name">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">Doc Type</span>
+                        <select class="form-control" id="sel_type" name="sel_type">
+                            <option value="">select type</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Department</span>
+                        <select class="form-control" id="sel_dept" name="sel_dept">
+                            <option value="">select department</option>
+                        </select>
+                    </div>
+                    <input type="checkbox" id="chk_sub_depts" /> Include Sub Departments
+                    <br />
+                    <span class="btn btn-sm btn-primary pull-right">get report</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="head1 grad2">
+    <span class="btn btn-sm"><span class="glyphicon glyphicon-export"></span> Export To Excel</span>
+    <span class="btn btn-sm"><span class="glyphicon glyphicon-export"></span> Export To PDF</span>
+    <span class="btn btn-sm"><span class="glyphicon glyphicon-envelope"></span> Email Report</span>
+    <span class="btn btn-sm"><span class="glyphicon glyphicon-print"></span> Print Report</span>
+    <span class="btn btn-sm"><span class="glyphicon glyphicon-floppy-save"></span> Download Report</span>
+</div>
+<table class="table table-striped">
+    <tr>
+        <th>Date</th>
+        <th>Video Count</th>
+    </tr>
+    <tr>
+        <td>2015-01-01</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>2015-02-01</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>2015-03-01</td>
+        <td>200</td>
+    </tr>
+</table>

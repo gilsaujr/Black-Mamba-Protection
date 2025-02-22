@@ -1,0 +1,98 @@
+﻿@using BMP;
+@using BMP.Models;
+@model IEnumerable<WorkInViewModel>
+@{
+    ViewBag.Title = "Workstations";
+}
+
+@section scripts{
+    <script src="~/scripts/workstation.js"></script>
+}
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<a id="delSelected" href="#modal_del_confirm" data-toggle="modal" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-remove"></span>&nbsp;Delete Selected</a>
+<a id="btn_add_work" href="#modal_add_work" data-toggle="modal" class="btn btn-sm btn-primary pull-right"><span class="glyphicon glyphicon-plus"></span> Add Workstation</a>
+<table class="table table-striped">
+    <tr>
+        <th class="text-center"><input type="checkbox" id="chkAll" /></th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>IP Address</th>
+        <th>Save File Path</th>
+        <th>Doc Retention Period</th>
+        <th class="text-center">Actions</th>
+    </tr>
+    @foreach(WorkInViewModel work in Model)
+    {
+        <tr>
+            <td class="text-center"><input type="checkbox" id="chkWork" name="chkWork" data-id="@work.Id" /></td>
+            <td>@work.Id</td>
+            <td>@work.WorkstationName</td>
+            <td>@work.IPaddress</td>
+            <td>@work.SaveFilePath</td>
+            <td>@work.SaveDays</td>
+            <td class="text-center">
+                <a href="#modal_add_work" data-toggle="modal" class="edit_work glyphicon glyphicon-pencil" data-id="@work.Id" data-name="@work.WorkstationName" data-ip-address="@work.IPaddress" data-save-file-path="@work.SaveFilePath" data-save-days="@work.SaveDays" title="edit details"></a>
+                <a class="rem_work btn btn-sm" data-id="@work.Id" title="remove"><span class="glyphicon glyphicon-remove"></span></a>
+            </td>
+        </tr>
+    }
+</table>
+
+<form id="frmWork" action="~/office/workstations" method="post">
+    <div class="modal fade" id="modal_add_work" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header grad2">
+                    <a href="#" id="closeFPwd" class="btn btn-default pull-right" data-dismiss="modal">X</a>
+                    <h4 id="title_add_work">Add Workstation</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <span class="input-group-addon">Name</span>
+                        <input type="text" id="txt_work_name" name="WorkstationName" class="form-control" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">IP Address</span>
+                        <input type="text" id="txt_ip_address" name="IPaddress" class="form-control" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Save File Path</span>
+                        <input type="text" id="txt_save_file_path" name="SaveFilePath" class="form-control" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Doc Retention Period</span>
+                        <input type="text" id="txt_save_days" name="SaveDays" class="form-control" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span class="btn btn-sm btn-primary" id="btn_add_work_modal">Add Workstation</span>
+                    <span class="btn btn-sm btn-primary" id="btn_update_work_modal">Update Workstation</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" id="hid_work_id" name="workId" />
+    <input type="hidden" id="hid_del_works" name="delWorks" />
+</form>
+
+<div class="modal fade" id="modal_del_confirm" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header grad2">
+                <a href="#" class="btn btn-default pull-right" data-dismiss="modal">X</a>
+                <h4>Delete Workstations Selected</h4>
+            </div>
+            <div class="modal-body">
+                These workstations will be permanently deleted and cannot be recovered. Are you sure you want to proceed?
+            </div>
+            <div class="modal-footer">
+                <span class="btn btn-sm btn-primary" id="del_confirm_proceed">Proceed</span>
+                <span class="btn btn-sm btn-primary" data-dismiss="modal">Cancel</span>
+            </div>
+        </div>
+    </div>
+</div>

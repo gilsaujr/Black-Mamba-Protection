@@ -1,0 +1,108 @@
+﻿@using BMP;
+@using BMP.Models;
+@model IEnumerable<CloudInViewModel>
+@{
+    ViewBag.Title = "Cloud Space";
+}
+
+@section scripts{
+    <script src="~/scripts/cloud.js"></script>
+}
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<a id="delSelected" href="#modal_del_confirm" data-toggle="modal" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-remove"></span>&nbsp;Delete Selected</a>
+<a id="btn_add_cloud" href="#modal_add_cloud" data-toggle="modal" class="btn btn-sm btn-primary pull-right"><span class="glyphicon glyphicon-plus"></span> Add Cloud</a>
+<table class="table table-striped">
+    <tr>
+        <th class="text-center"><input type="checkbox" id="chkAll" /></th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>API Url/Endpoint</th>
+        <th>API Key</th>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Space Available</th>
+        <th>Space Used</th>
+        <th class="text-center">Actions</th>
+    </tr>
+    @foreach(CloudInViewModel cloud in Model)
+    {
+        <tr>
+            <td class="text-center"><input type="checkbox" id="chkCloud" name="chkCloud" data-id="@cloud.Id" /></td>
+            <td>@cloud.Id</td>
+            <td>@cloud.ServiceName</td>
+            <td>@cloud.EndPoint</td>
+            <td>@cloud.APIKey</td>
+            <td>@cloud.Username</td>
+            <td>********************</td>
+            <td>@cloud.SpaceAvail</td>
+            <td>@cloud.SpaceUsed</td>
+            <td class="text-center">
+                <a href="#modal_add_cloud" data-toggle="modal" class="edit_cloud glyphicon glyphicon-pencil" data-id="@cloud.Id" data-name="@cloud.ServiceName" data-endpoint="@cloud.EndPoint" data-apikey="@cloud.APIKey" data-username="@cloud.Username" title="edit details"></a>
+                <a class="rem_cloud btn btn-sm" data-id="@cloud.Id" title="remove"><span class="glyphicon glyphicon-remove"></span></a>
+            </td>
+        </tr>
+    }
+</table>
+
+<form id="frmCloud" action="~/storage/cloudspace" method="post">
+    <div class="modal fade" id="modal_add_cloud" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header grad2">
+                    <a href="#" id="closeFPwd" class="btn btn-default pull-right" data-dismiss="modal">X</a>
+                    <h4 id="title_add_cloud">Add Cloud</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <span class="input-group-addon">Name</span>
+                        <input type="text" id="txt_cloud_name" name="Name" class="form-control" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">API Url/Enpoint</span>
+                        <input type="text" id="txt_endpoint" name="Endpoint" class="form-control" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">API Key</span>
+                        <input type="text" id="txt_apikey" name="APIKey" class="form-control" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Username</span>
+                        <input type="text" id="txt_username" name="Username" class="form-control" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Password</span>
+                        <input type="password" id="txt_password" name="Password" class="form-control" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span class="btn btn-sm btn-primary" id="btn_add_cloud_modal">Add Cloud</span>
+                    <span class="btn btn-sm btn-primary" id="btn_update_cloud_modal">Update Cloud</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" id="hid_cloud_id" name="cloudId" />
+    <input type="hidden" id="hid_del_clouds" name="delClouds" />
+</form>
+
+<div class="modal fade" id="modal_del_confirm" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header grad2">
+                <a href="#" class="btn btn-default pull-right" data-dismiss="modal">X</a>
+                <h4>Delete Clouds Selected</h4>
+            </div>
+            <div class="modal-body">
+                These cloud spaces will be permanently deleted and cannot be recovered. Are you sure you want to proceed?
+            </div>
+            <div class="modal-footer">
+                <span class="btn btn-sm btn-primary" id="del_confirm_proceed">Proceed</span>
+                <span class="btn btn-sm btn-primary" data-dismiss="modal">Cancel</span>
+            </div>
+        </div>
+    </div>
+</div>

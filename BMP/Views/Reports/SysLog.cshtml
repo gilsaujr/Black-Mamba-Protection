@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "System Log";
+}
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">Function Module</span>
+                        <select class="form-control" id="sel_type" name="sel_type">
+                            <option value="">select type</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Operation Time</span>
+                        <input type="text" class="form-control" id="txt_DateFrom" name="txt_DateFrom" placeholder="FROM (12/31/9999)" /><input type="text" class="form-control" id="txt_DateTo" name="txt_DateTo" placeholder="TO (12/31/9999)" />
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">Police No</span>
+                        <input type="text" class="form-control" id="txt_police_no" name="txt_police_no">
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Police Name</span>
+                        <input type="text" class="form-control" id="txt_police_name" name="txt_police_name">
+                    </div>
+                    <br />
+                    <span class="btn btn-sm btn-primary pull-right">get report</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="head1 grad2">
+    <span class="btn btn-sm"><span class="glyphicon glyphicon-export"></span> Export To Excel</span>
+    <span class="btn btn-sm"><span class="glyphicon glyphicon-export"></span> Export To PDF</span>
+    <span class="btn btn-sm"><span class="glyphicon glyphicon-envelope"></span> Email Report</span>
+    <span class="btn btn-sm"><span class="glyphicon glyphicon-print"></span> Print Report</span>
+    <span class="btn btn-sm"><span class="glyphicon glyphicon-floppy-save"></span> Download Report</span>
+</div>
+<table class="table table-striped">
+    <tr>
+        <th>#</th>
+        <th>Police No</th>
+        <th>Police Name</th>
+        <th>Function Module</th>
+        <th>Operating Categories</th>
+        <th>Operation Time</th>
+        <th>IP Address</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>09099</td>
+        <td>Bob Dylan</td>
+        <td>Edit Department</td>
+        <td>Office</td>
+        <td>2015-09-22 10:34:55</td>
+        <td>192.168.1.1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>09099</td>
+        <td>Bob Dylan</td>
+        <td>Edit Department</td>
+        <td>Office</td>
+        <td>2015-09-22 10:34:55</td>
+        <td>192.168.1.1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>09099</td>
+        <td>Bob Dylan</td>
+        <td>Edit Department</td>
+        <td>Office</td>
+        <td>2015-09-22 10:34:55</td>
+        <td>192.168.1.1</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>09099</td>
+        <td>Bob Dylan</td>
+        <td>Edit Department</td>
+        <td>Office</td>
+        <td>2015-09-22 10:34:55</td>
+        <td>192.168.1.1</td>
+    </tr>
+</table>

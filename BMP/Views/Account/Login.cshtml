@@ -1,0 +1,136 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+    string returnUrl = Request.QueryString["returnUrl"] != null ? Request.QueryString["returnUrl"].ToString() : string.Empty;
+    if(string.IsNullOrEmpty(returnUrl)){
+        returnUrl = Request.Form["returnUrl"] != null ? Request.Form["returnUrl"].ToString() : string.Empty;
+    }
+}
+
+@section scripts{
+    @Scripts.Render("~/scripts/login.js")
+}
+
+@if (TempData["ErrMsg"] != null)
+{
+    <h3 class="alert alert-danger" role="alert">@TempData["ErrMsg"].ToString()</h3>
+}
+else if (Request.Url.ToString().ToLower().IndexOf("fromlistener=1") > -1)
+{
+    <h3 class="alert alert-info" role="alert">A device has been detected. Please login to monitor devices.</h3>
+}
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<div id="loginContainer" class="container">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#tab1" data-toggle="tab">LOGIN</a></li>
+        <!--<li><a href="#tab2" data-toggle="tab">SETUP</a></li>-->
+    </ul>
+    <div class="tab-content nopad">
+        <div class="tab-pane active" id="tab1">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <br />
+                    <form id="frmLogin" method="post" action="~/account/login">
+                        <div class="input-group">
+                            <span class="input-group-addon">Username</span>
+                            <input type="text" class="form-control" id="txt_username_login" name="txt_username_login">
+                        </div>
+                        <br />
+                        <div class="input-group">
+                            <span class="input-group-addon">Password</span>
+                            <input type="text" class="form-control" id="txt_password_login" name="txt_password_login">
+                        </div>
+                        <input type="hidden" name="returnUrl" value="@returnUrl" />
+                    </form>
+                    <div><a href="#modal_forgotpwd" class="pull-right" data-toggle="modal" data-dismiss="modal">Forgot Password</a></div>
+                    <br />
+                </div>
+                <div class="panel-footer">
+                    <p>
+                        <a href="#" id="lnkLogin" class="btn btn-default pull-right">Login</a>
+                        <br />
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--<div class="tab-pane" id="tab2">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form id="frmSetup" method="post" action="~/account/login">
+                        <p>VIDEO STORAGE LOCATION</p>
+                        <div class="input-group">
+                            <span class="input-group-addon">Storage Path</span>
+                            <input type="text" class="form-control" id="txt_store_path_reg">
+                        </div>
+                        <br />
+                        <p>DATABASE LOCATION</p>
+                        <div class="input-group">
+                            <span class="input-group-addon">Server</span>
+                            <input type="text" class="form-control" id="txt_db_server_reg">
+                        </div>
+                        <br />
+                        <div class="input-group">
+                            <span class="input-group-addon">Database</span>
+                            <input type="text" class="form-control" id="txt_db_name_reg">
+                        </div>
+                        <br />
+                        <div class="input-group">
+                            <span class="input-group-addon">Username</span>
+                            <input type="text" class="form-control" id="txt_db_uid_reg">
+                        </div>
+                        <br />
+                        <div class="input-group">
+                            <span class="input-group-addon">Password</span>
+                            <input type="text" class="form-control" id="txt_db_pwd_reg">
+                        </div>
+                    </form>
+                </div>
+                <div class="panel-footer">
+                    <p>
+                        <a href="#" id="lnkRegister" class="btn btn-default pull-right">Complete Setup</a>
+                        <br />
+                    </p>
+                </div>
+            </div>
+        </div>-->
+    </div>
+</div>
+
+<div class="modal fade" id="modal_forgotpwd" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header grad2">
+                <a href="#" class="btn btn-default pull-right" data-dismiss="modal">X</a>
+                <h4>Reset Password</h4>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                  <span class="input-group-addon">Username</span>
+                  <input type="text" class="form-control" id="txt_username_fpwd">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" id="lnkForgotPwd" class="btn btn-default">Send Email</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_forgotpwd_msg" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header grad2">
+                <a href="#" class="btn btn-default pull-right" data-dismiss="modal">X</a>
+                <h4>Reset Password Confirmation</h4>
+            </div>
+            <div class="modal-body">
+                An email has been sent successfully, to reset your password.
+            </div>
+        </div>
+    </div>
+</div>    

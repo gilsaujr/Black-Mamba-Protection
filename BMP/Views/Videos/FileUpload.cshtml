@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "File Upload";
+}
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="col-sm-6">
+                    <div class="input-group">
+                        <span class="input-group-addon">File</span>
+                        <a href="javascript:$('#file1').click();">&nbsp;browse your computer</a>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Police No</span>
+                        <input type="text" class="form-control" id="txt_police_no" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Device No</span>
+                        <input type="text" class="form-control" id="txt_device_no" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Taken Date</span>
+                        <input type="text" class="form-control" id="txt_taken_date" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Note</span>
+                        <textarea rows="5" cols="10" class="form-control" id="txt_notes"></textarea>
+                    </div>
+                    <p>&nbsp;</p>
+                    <span class="btn btn-sm btn-primary pull-right">Upload</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="file" id="file1" style="visibility:hidden;" />

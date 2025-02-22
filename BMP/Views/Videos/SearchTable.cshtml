@@ -1,0 +1,85 @@
+﻿@using BMP;
+@model IEnumerable<Doc>
+
+<table class="table table-striped">
+    <tr>
+        <th class="text-center"><input type="checkbox" id="chkAll" /></th>
+        <th class="text-center">Doc</th>
+        <th>Police No</th>
+        <th>Device No</th>
+        <th>Level</th>
+        <th>Taken</th>
+        <th>Uploaded</th>
+        <th>Status</th>
+        <th>Location</th>
+        <th>Actions</th>
+    </tr>
+    <tbody>
+
+    @{  foreach(Doc doc in Model){
+
+            string icon_img = string.Empty;
+            string vidLen = string.Empty;
+            
+            if(doc.DocType == 0){
+                icon_img = "icon_photo.jpg";
+            }
+            else if (doc.DocType == 1)
+            {
+                icon_img = "icon_video.jpg";
+                vidLen = doc.VideoLength.ToString();
+            }
+            else if (doc.DocType == 2)
+            {
+                icon_img = "icon_audio.png";
+            }
+            else if (doc.DocType == 3)
+            {
+                icon_img = "icon_txt.png";
+            }
+            else if (doc.DocType == 4)
+            {
+                icon_img = "icon_gps.png";
+            }
+
+            string sFile = doc.DestFile.Replace('\\', '/');
+            //string[] arrFile = doc.DestFile.Split('\\');
+            //if (arrFile.Length > 0) { sFile = arrFile[arrFile.Length - 1]; }
+            
+            <tr>
+                <td class="text-center"><input type="checkbox" id="chkDoc" name="chkDoc" data-id="@doc.id" /></td>
+                <td class="text-center">
+                    #@doc.id<br />
+                    <a href="#modal_view_doc" data-toggle="modal" class="view_doc" data-id="@doc.id" data-src="@string.Format("../DocFiles/{0}", sFile)" title="view video & details"><img src="~/images/@icon_img" class="video1" /></a>
+                    <br />
+                    @if (doc.DocType == 1) { @vidLen }
+                </td>
+                <td>#@doc.PolNo</td>
+                <td>#@doc.DevNo</td>
+                <td>@doc.GradeID</td>
+                <td>@doc.PicDate</td>
+                <td>@doc.UpLoadDate</td>
+                <td><div>@doc.DocStatus</div>
+                    @if(doc.DocStatusProgress < 100){
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-striped active" role="progressbar"
+                          aria-valuenow="@doc.DocStatusProgress" aria-valuemin="0" aria-valuemax="100" style="width:@doc.DocStatusProgress%">
+                            @doc.DocStatusProgress%
+                          </div>
+                        </div>
+                    }
+                </td>
+                <td>@doc.Location</td>
+                <td><a href="#modal_view_doc" data-toggle="modal" class="view_doc glyphicon glyphicon-eye-open" data-id="@doc.id" data-src="@string.Format("../DocFiles/{0}", sFile)" title="view video & details"></a>
+                    <a href="#modal_edit_doc" data-toggle="modal" class="edit_doc glyphicon glyphicon-pencil" data-id="@doc.id" data-src="@string.Format("../DocFiles/{0}", sFile)" data-doc-grade="@doc.GradeID" title="edit details"></a>
+                    <a href="#" class="glyphicon glyphicon-scissors" title="edit video"></a>
+                    <a href="#" class="glyphicon glyphicon-floppy-save" title="download file"></a>
+                    <a href="#" class="glyphicon glyphicon-transfer" title="transfer to other location"></a>
+                    <a href="#" class="glyphicon glyphicon-envelope" title="send link via email"></a>
+                    <a href="#" class="del_item" data-id="@doc.id" title="archive file"><span class="glyphicon glyphicon-remove"></span></a>
+                </td>
+            </tr>
+        }
+    }
+    </tbody>
+</table>

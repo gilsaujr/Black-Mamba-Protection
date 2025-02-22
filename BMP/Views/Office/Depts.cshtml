@@ -1,0 +1,98 @@
+﻿@using BMP;
+@using BMP.Models;
+@model IEnumerable<DeptInViewModel>
+@{
+    ViewBag.Title = "Departments";
+}
+
+@section scripts{
+    <script src="~/scripts/dept.js"></script>
+}
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<a id="delSelected" href="#modal_del_confirm" data-toggle="modal" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-remove"></span>&nbsp;Delete Selected</a>
+<a id="btn_add_dept" href="#modal_add_dept" data-toggle="modal" class="btn btn-sm btn-primary pull-right"><span class="glyphicon glyphicon-plus"></span> Add Department</a>
+<table class="table table-striped">
+    <tr>
+        <th class="text-center"><input type="checkbox" id="chkAll" /></th>
+        <th>Dept Id</th>
+        <th>Department</th>
+        <th class="text-center">Actions</th>
+    </tr>
+    @foreach(DeptInViewModel dept in Model)
+    {
+        <tr>
+            <td class="text-center"><input type="checkbox" id="chkDept" name="chkDept" data-id="@dept.Id" /></td>
+            <td>@dept.Id</td>
+            <td>@{  if(dept.ParentId != null)
+                    { 
+                        @dept.ParentName <text>-</text> @dept.Name
+                    }
+                    else{
+                        @dept.Name
+                    }
+                }
+            </td>
+            <td class="text-center">
+                <a href="#modal_add_dept" data-toggle="modal" class="edit_dept glyphicon glyphicon-pencil" data-id="@dept.Id" data-name="@dept.Name" data-parent-id="@dept.ParentId" title="edit details"></a>
+                <a class="rem_dept btn btn-sm" data-id="@dept.Id" title="remove"><span class="glyphicon glyphicon-remove"></span></a>
+            </td>
+        </tr>
+    }
+</table>
+
+<form id="frmDept" action="~/office/depts" method="post">
+    <div class="modal fade" id="modal_add_dept" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header grad2">
+                    <a href="#" id="closeFPwd" class="btn btn-default pull-right" data-dismiss="modal">X</a>
+                    <h4 id="title_add_dept">Add Department</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <span class="input-group-addon">Parent Department</span>
+                        <select class="form-control" id="sel_dept" name="ParentDeptId">
+                            <option value="">no parent department</option>
+                            @foreach (DeptInViewModel dept2 in Model)
+                            {
+                                <option value="@dept2.Id">@dept2.Name</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Name</span>
+                        <input type="text" id="txt_dept_name" name="DeptName" class="form-control" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <span class="btn btn-sm btn-primary" id="btn_add_dept_modal">Add Department</span>
+                    <span class="btn btn-sm btn-primary" id="btn_update_dept_modal">Update Department</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" id="hid_dept_id" name="deptId" />
+    <input type="hidden" id="hid_del_depts" name="delDepts" />
+</form>
+
+<div class="modal fade" id="modal_del_confirm" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header grad2">
+                <a href="#" class="btn btn-default pull-right" data-dismiss="modal">X</a>
+                <h4>Delete Departments Selected</h4>
+            </div>
+            <div class="modal-body">
+                These departments will be permanently deleted and cannot be recovered. Are you sure you want to proceed?
+            </div>
+            <div class="modal-footer">
+                <span class="btn btn-sm btn-primary" id="del_confirm_proceed">Proceed</span>
+                <span class="btn btn-sm btn-primary" data-dismiss="modal">Cancel</span>
+            </div>
+        </div>
+    </div>
+</div>

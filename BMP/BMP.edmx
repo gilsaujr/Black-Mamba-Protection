@@ -1,0 +1,2100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="zfy84Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="zfy84ModelStoreContainer">
+          <EntitySet Name="Device" EntityType="zfy84Model.Store.Device" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Doc" EntityType="zfy84Model.Store.Doc" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DocDownLoad" EntityType="zfy84Model.Store.DocDownLoad" store:Type="Tables" store:Schema="dbo" store:Name="DocDownLoad">
+            <DefiningQuery>SELECT 
+      [DocDownLoad].[ID] AS [ID], 
+      [DocDownLoad].[DocID] AS [DocID], 
+      [DocDownLoad].[StaffID] AS [StaffID], 
+      [DocDownLoad].[DownLoadTime] AS [DownLoadTime], 
+      [DocDownLoad].[ComputerName] AS [ComputerName], 
+      [DocDownLoad].[DoType] AS [DoType]
+      FROM [dbo].[DocDownLoad] AS [DocDownLoad]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DocGrade" EntityType="zfy84Model.Store.DocGrade" store:Type="Tables" store:Schema="dbo" store:Name="DocGrade">
+            <DefiningQuery>SELECT 
+      [DocGrade].[ID] AS [ID], 
+      [DocGrade].[GradeName] AS [GradeName], 
+      [DocGrade].[GradeEng] AS [GradeEng], 
+      [DocGrade].[DocGrade_Id_Pk] AS [DocGrade_Id_Pk]
+      FROM [dbo].[DocGrade] AS [DocGrade]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DocPreviewParam" EntityType="zfy84Model.Store.DocPreviewParam" store:Type="Tables" store:Schema="dbo" store:Name="DocPreviewParam">
+            <DefiningQuery>SELECT 
+      [DocPreviewParam].[ID] AS [ID], 
+      [DocPreviewParam].[pImgW] AS [pImgW], 
+      [DocPreviewParam].[pImgH] AS [pImgH], 
+      [DocPreviewParam].[vVideoBitrate] AS [vVideoBitrate], 
+      [DocPreviewParam].[vAudioBitrate] AS [vAudioBitrate], 
+      [DocPreviewParam].[vAudioFreq] AS [vAudioFreq], 
+      [DocPreviewParam].[vImgW] AS [vImgW], 
+      [DocPreviewParam].[vImgH] AS [vImgH], 
+      [DocPreviewParam].[vOriginalSize] AS [vOriginalSize], 
+      [DocPreviewParam].[aBitrate] AS [aBitrate], 
+      [DocPreviewParam].[aFreq] AS [aFreq], 
+      [DocPreviewParam].[vPreImgW] AS [vPreImgW], 
+      [DocPreviewParam].[vPreImgH] AS [vPreImgH], 
+      [DocPreviewParam].[GenPreview] AS [GenPreview]
+      FROM [dbo].[DocPreviewParam] AS [DocPreviewParam]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DocQry" EntityType="zfy84Model.Store.DocQry" store:Type="Tables" store:Schema="dbo" store:Name="DocQry">
+            <DefiningQuery>SELECT 
+      [DocQry].[DocID] AS [DocID], 
+      [DocQry].[PolNo] AS [PolNo], 
+      [DocQry].[PolDepartmentID] AS [PolDepartmentID], 
+      [DocQry].[PolDepartmentName] AS [PolDepartmentName], 
+      [DocQry].[DevNo] AS [DevNo], 
+      [DocQry].[StaffID] AS [StaffID], 
+      [DocQry].[PicDate] AS [PicDate], 
+      [DocQry].[UpLoadDate] AS [UpLoadDate], 
+      [DocQry].[GradeID] AS [GradeID], 
+      [DocQry].[GradeName] AS [GradeName], 
+      [DocQry].[GradeEng] AS [GradeEng], 
+      [DocQry].[DocTypeID] AS [DocTypeID], 
+      [DocQry].[DocTypeChs] AS [DocTypeChs], 
+      [DocQry].[DocTypeEng] AS [DocTypeEng], 
+      [DocQry].[Comment] AS [Comment], 
+      [DocQry].[PrevFile] AS [PrevFile], 
+      [DocQry].[DestFile] AS [DestFile], 
+      [DocQry].[FaceFile] AS [FaceFile], 
+      [DocQry].[GPSFile] AS [GPSFile], 
+      [DocQry].[Param] AS [Param], 
+      [DocQry].[UserName] AS [UserName], 
+      [DocQry].[IsSele] AS [IsSele], 
+      [DocQry].[IsFinished] AS [IsFinished], 
+      [DocQry].[WorkStationID] AS [WorkStationID], 
+      [DocQry].[WorkStationName] AS [WorkStationName], 
+      [DocQry].[WorkStationIP] AS [WorkStationIP], 
+      [DocQry].[WebAdd] AS [WebAdd], 
+      [DocQry].[VirtualPath] AS [VirtualPath], 
+      [DocQry].[StoreStatus] AS [StoreStatus], 
+      [DocQry].[VideoLength] AS [VideoLength], 
+      [DocQry].[FileLength] AS [FileLength], 
+      [DocQry].[DocNo] AS [DocNo], 
+      [DocQry].[LastPicDate] AS [LastPicDate]
+      FROM [dbo].[DocQry] AS [DocQry]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DocQryByCustom" EntityType="zfy84Model.Store.DocQryByCustom" store:Type="Tables" store:Schema="dbo" store:Name="DocQryByCustom">
+            <DefiningQuery>SELECT 
+      [DocQryByCustom].[DocID] AS [DocID], 
+      [DocQryByCustom].[PolNo] AS [PolNo], 
+      [DocQryByCustom].[PolDepartmentID] AS [PolDepartmentID], 
+      [DocQryByCustom].[PolDepartmentName] AS [PolDepartmentName], 
+      [DocQryByCustom].[DevNo] AS [DevNo], 
+      [DocQryByCustom].[StaffID] AS [StaffID], 
+      [DocQryByCustom].[PicDate] AS [PicDate], 
+      [DocQryByCustom].[UpLoadDate] AS [UpLoadDate], 
+      [DocQryByCustom].[GradeID] AS [GradeID], 
+      [DocQryByCustom].[GradeName] AS [GradeName], 
+      [DocQryByCustom].[GradeEng] AS [GradeEng], 
+      [DocQryByCustom].[DocTypeID] AS [DocTypeID], 
+      [DocQryByCustom].[DocTypeChs] AS [DocTypeChs], 
+      [DocQryByCustom].[DocTypeEng] AS [DocTypeEng], 
+      [DocQryByCustom].[Comment] AS [Comment], 
+      [DocQryByCustom].[PrevFile] AS [PrevFile], 
+      [DocQryByCustom].[DestFile] AS [DestFile], 
+      [DocQryByCustom].[FaceFile] AS [FaceFile], 
+      [DocQryByCustom].[GPSFile] AS [GPSFile], 
+      [DocQryByCustom].[Param] AS [Param], 
+      [DocQryByCustom].[UserName] AS [UserName], 
+      [DocQryByCustom].[IsSele] AS [IsSele], 
+      [DocQryByCustom].[IsFinished] AS [IsFinished], 
+      [DocQryByCustom].[WorkStationID] AS [WorkStationID], 
+      [DocQryByCustom].[WorkStationName] AS [WorkStationName], 
+      [DocQryByCustom].[WorkStationIP] AS [WorkStationIP], 
+      [DocQryByCustom].[WebAdd] AS [WebAdd], 
+      [DocQryByCustom].[VirtualPath] AS [VirtualPath], 
+      [DocQryByCustom].[StoreStatus] AS [StoreStatus], 
+      [DocQryByCustom].[VideoLength] AS [VideoLength], 
+      [DocQryByCustom].[FileLength] AS [FileLength], 
+      [DocQryByCustom].[DocNo] AS [DocNo], 
+      [DocQryByCustom].[LastPicDate] AS [LastPicDate], 
+      [DocQryByCustom].[condition] AS [condition]
+      FROM [dbo].[DocQryByCustom] AS [DocQryByCustom]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DocType" EntityType="zfy84Model.Store.DocType" store:Type="Tables" store:Schema="dbo" store:Name="DocType">
+            <DefiningQuery>SELECT 
+      [DocType].[ID] AS [ID], 
+      [DocType].[NameChs] AS [NameChs], 
+      [DocType].[NameEng] AS [NameEng]
+      FROM [dbo].[DocType] AS [DocType]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DocUpLoadSet" EntityType="zfy84Model.Store.DocUpLoadSet" store:Type="Tables" store:Schema="dbo" store:Name="DocUpLoadSet">
+            <DefiningQuery>SELECT 
+      [DocUpLoadSet].[ID] AS [ID], 
+      [DocUpLoadSet].[ServerID] AS [ServerID], 
+      [DocUpLoadSet].[WorkStationID] AS [WorkStationID], 
+      [DocUpLoadSet].[UploadTime] AS [UploadTime], 
+      [DocUpLoadSet].[GradeID] AS [GradeID]
+      FROM [dbo].[DocUpLoadSet] AS [DocUpLoadSet]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DocUpLoadSetIP" EntityType="zfy84Model.Store.DocUpLoadSetIP" store:Type="Tables" store:Schema="dbo" store:Name="DocUpLoadSetIP">
+            <DefiningQuery>SELECT 
+      [DocUpLoadSetIP].[ID] AS [ID], 
+      [DocUpLoadSetIP].[ServerIP] AS [ServerIP], 
+      [DocUpLoadSetIP].[WorkStationIP] AS [WorkStationIP], 
+      [DocUpLoadSetIP].[UploadTime] AS [UploadTime], 
+      [DocUpLoadSetIP].[GradeID] AS [GradeID]
+      FROM [dbo].[DocUpLoadSetIP] AS [DocUpLoadSetIP]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="EmailInfo" EntityType="zfy84Model.Store.EmailInfo" store:Type="Tables" store:Schema="dbo" store:Name="EmailInfo">
+            <DefiningQuery>SELECT 
+      [EmailInfo].[ID] AS [ID], 
+      [EmailInfo].[Email] AS [Email]
+      FROM [dbo].[EmailInfo] AS [EmailInfo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Notes" EntityType="zfy84Model.Store.Notes" store:Type="Tables" store:Schema="dbo" store:Name="Notes">
+            <DefiningQuery>SELECT 
+      [Notes].[ID] AS [ID], 
+      [Notes].[Title] AS [Title], 
+      [Notes].[Comment] AS [Comment], 
+      [Notes].[Publisher] AS [Publisher], 
+      [Notes].[InDate] AS [InDate], 
+      [Notes].[IsPop] AS [IsPop]
+      FROM [dbo].[Notes] AS [Notes]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OperateType" EntityType="zfy84Model.Store.OperateType" store:Type="Tables" store:Schema="dbo" store:Name="OperateType">
+            <DefiningQuery>SELECT 
+      [OperateType].[ID] AS [ID], 
+      [OperateType].[OperateName] AS [OperateName], 
+      [OperateType].[EnglishName] AS [EnglishName]
+      FROM [dbo].[OperateType] AS [OperateType]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="QryPhotoReadPath" EntityType="zfy84Model.Store.QryPhotoReadPath" store:Type="Tables" store:Schema="dbo" store:Name="QryPhotoReadPath">
+            <DefiningQuery>SELECT 
+      [QryPhotoReadPath].[PathName] AS [PathName], 
+      [QryPhotoReadPath].[VirtualPath] AS [VirtualPath], 
+      [QryPhotoReadPath].[mmsPath] AS [mmsPath], 
+      [QryPhotoReadPath].[SrcOrder] AS [SrcOrder]
+      FROM [dbo].[QryPhotoReadPath] AS [QryPhotoReadPath]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="QryPhotoSavePath" EntityType="zfy84Model.Store.QryPhotoSavePath" store:Type="Tables" store:Schema="dbo" store:Name="QryPhotoSavePath">
+            <DefiningQuery>SELECT 
+      [QryPhotoSavePath].[PathName] AS [PathName]
+      FROM [dbo].[QryPhotoSavePath] AS [QryPhotoSavePath]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="RightGroup" EntityType="zfy84Model.Store.RightGroup" store:Type="Tables" store:Schema="dbo" store:Name="RightGroup">
+            <DefiningQuery>SELECT 
+      [RightGroup].[ID] AS [ID], 
+      [RightGroup].[GroupName] AS [GroupName]
+      FROM [dbo].[RightGroup] AS [RightGroup]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="RightGroupHas" EntityType="zfy84Model.Store.RightGroupHas" store:Type="Tables" store:Schema="dbo" store:Name="RightGroupHas">
+            <DefiningQuery>SELECT 
+      [RightGroupHas].[ID] AS [ID], 
+      [RightGroupHas].[RightGroupID] AS [RightGroupID], 
+      [RightGroupHas].[RightNameID] AS [RightNameID]
+      FROM [dbo].[RightGroupHas] AS [RightGroupHas]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="RightGroupStaffDep" EntityType="zfy84Model.Store.RightGroupStaffDep" store:Type="Tables" store:Schema="dbo" store:Name="RightGroupStaffDep">
+            <DefiningQuery>SELECT 
+      [RightGroupStaffDep].[ID] AS [ID], 
+      [RightGroupStaffDep].[RightGroupID] AS [RightGroupID], 
+      [RightGroupStaffDep].[StaffDepID] AS [StaffDepID]
+      FROM [dbo].[RightGroupStaffDep] AS [RightGroupStaffDep]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="RightName" EntityType="zfy84Model.Store.RightName" store:Type="Tables" store:Schema="dbo" store:Name="RightName">
+            <DefiningQuery>SELECT 
+      [RightName].[ID] AS [ID], 
+      [RightName].[Name] AS [Name], 
+      [RightName].[NameEng] AS [NameEng], 
+      [RightName].[RightType] AS [RightType], 
+      [RightName].[ShowOrd] AS [ShowOrd], 
+      [RightName].[SiteUrl] AS [SiteUrl], 
+      [RightName].[MenuYayer] AS [MenuYayer]
+      FROM [dbo].[RightName] AS [RightName]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SaveCloudSpace" EntityType="zfy84Model.Store.SaveCloudSpace" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SaveFilePath" EntityType="zfy84Model.Store.SaveFilePath" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sequences" EntityType="zfy84Model.Store.Sequences" store:Type="Tables" store:Schema="dbo" store:Name="Sequences">
+            <DefiningQuery>SELECT 
+      [Sequences].[Name] AS [Name], 
+      [Sequences].[CurVal] AS [CurVal], 
+      [Sequences].[Step] AS [Step]
+      FROM [dbo].[Sequences] AS [Sequences]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Servers" EntityType="zfy84Model.Store.Servers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Staff" EntityType="zfy84Model.Store.Staff" store:Type="Tables" store:Schema="dbo" store:Name="Staff">
+            <DefiningQuery>SELECT 
+      [Staff].[ID] AS [ID], 
+      [Staff].[UserLevel] AS [UserLevel], 
+      [Staff].[UserName] AS [UserName], 
+      [Staff].[LoginName] AS [LoginName], 
+      [Staff].[PassWord] AS [PassWord], 
+      [Staff].[CorpName] AS [CorpName], 
+      [Staff].[Address] AS [Address], 
+      [Staff].[Phone] AS [Phone], 
+      [Staff].[PolNo] AS [PolNo], 
+      [Staff].[DevNo] AS [DevNo], 
+      [Staff].[DevPwd] AS [DevPwd], 
+      [Staff].[DepartmentID] AS [DepartmentID], 
+      [Staff].[Status] AS [Status]
+      FROM [dbo].[Staff] AS [Staff]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="StaffDepartment" EntityType="zfy84Model.Store.StaffDepartment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StaffRight" EntityType="zfy84Model.Store.StaffRight" store:Type="Tables" store:Schema="dbo" store:Name="StaffRight">
+            <DefiningQuery>SELECT 
+      [StaffRight].[ID] AS [ID], 
+      [StaffRight].[StaffID] AS [StaffID], 
+      [StaffRight].[RightGroupID] AS [RightGroupID]
+      FROM [dbo].[StaffRight] AS [StaffRight]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="StaffRightHas" EntityType="zfy84Model.Store.StaffRightHas" store:Type="Tables" store:Schema="dbo" store:Name="StaffRightHas">
+            <DefiningQuery>SELECT 
+      [StaffRightHas].[StaffID] AS [StaffID], 
+      [StaffRightHas].[UserName] AS [UserName], 
+      [StaffRightHas].[RightGroupID] AS [RightGroupID], 
+      [StaffRightHas].[RightNameID] AS [RightNameID], 
+      [StaffRightHas].[RightName] AS [RightName], 
+      [StaffRightHas].[PolDepartmentID] AS [PolDepartmentID], 
+      [StaffRightHas].[Siteurl] AS [Siteurl], 
+      [StaffRightHas].[MenuYayer] AS [MenuYayer]
+      FROM [dbo].[StaffRightHas] AS [StaffRightHas]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SysNote" EntityType="zfy84Model.Store.SysNote" store:Type="Tables" store:Schema="dbo" store:Name="SysNote">
+            <DefiningQuery>SELECT 
+      [SysNote].[ID] AS [ID], 
+      [SysNote].[RightNameID] AS [RightNameID], 
+      [SysNote].[OperateTypeID] AS [OperateTypeID], 
+      [SysNote].[OperateDate] AS [OperateDate], 
+      [SysNote].[IpAddr] AS [IpAddr], 
+      [SysNote].[StaffID] AS [StaffID]
+      FROM [dbo].[SysNote] AS [SysNote]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SysNoteRead" EntityType="zfy84Model.Store.SysNoteRead" store:Type="Tables" store:Schema="dbo" store:Name="SysNoteRead">
+            <DefiningQuery>SELECT 
+      [SysNoteRead].[id] AS [id], 
+      [SysNoteRead].[rightnameid] AS [rightnameid], 
+      [SysNoteRead].[operatetypeid] AS [operatetypeid], 
+      [SysNoteRead].[operatename] AS [operatename], 
+      [SysNoteRead].[englishname] AS [englishname], 
+      [SysNoteRead].[operatedate] AS [operatedate], 
+      [SysNoteRead].[ipaddr] AS [ipaddr], 
+      [SysNoteRead].[polno] AS [polno], 
+      [SysNoteRead].[username] AS [username], 
+      [SysNoteRead].[rightName] AS [rightName], 
+      [SysNoteRead].[rightNameEng] AS [rightNameEng]
+      FROM [dbo].[SysNoteRead] AS [SysNoteRead]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SysRec" EntityType="zfy84Model.Store.SysRec" store:Type="Tables" store:Schema="dbo" store:Name="SysRec">
+            <DefiningQuery>SELECT 
+      [SysRec].[ID] AS [ID], 
+      [SysRec].[StartTime] AS [StartTime], 
+      [SysRec].[EndTime] AS [EndTime], 
+      [SysRec].[UserID] AS [UserID], 
+      [SysRec].[ComputerName] AS [ComputerName], 
+      [SysRec].[RightNameID] AS [RightNameID]
+      FROM [dbo].[SysRec] AS [SysRec]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TimingExportExecel" EntityType="zfy84Model.Store.TimingExportExecel" store:Type="Tables" store:Schema="dbo" store:Name="TimingExportExecel">
+            <DefiningQuery>SELECT 
+      [TimingExportExecel].[ID] AS [ID], 
+      [TimingExportExecel].[ExportTime] AS [ExportTime], 
+      [TimingExportExecel].[SenderEmail] AS [SenderEmail], 
+      [TimingExportExecel].[SenderEmailPwd] AS [SenderEmailPwd]
+      FROM [dbo].[TimingExportExecel] AS [TimingExportExecel]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserProfile" EntityType="zfy84Model.Store.UserProfile" store:Type="Tables" store:Schema="dbo" store:Name="UserProfile">
+            <DefiningQuery>SELECT 
+      [UserProfile].[UserId] AS [UserId], 
+      [UserProfile].[UserName] AS [UserName]
+      FROM [dbo].[UserProfile] AS [UserProfile]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="webpages_Membership" EntityType="zfy84Model.Store.webpages_Membership" store:Type="Tables" store:Schema="dbo" store:Name="webpages_Membership">
+            <DefiningQuery>SELECT 
+      [webpages_Membership].[UserId] AS [UserId], 
+      [webpages_Membership].[CreateDate] AS [CreateDate], 
+      [webpages_Membership].[ConfirmationToken] AS [ConfirmationToken], 
+      [webpages_Membership].[IsConfirmed] AS [IsConfirmed], 
+      [webpages_Membership].[LastPasswordFailureDate] AS [LastPasswordFailureDate], 
+      [webpages_Membership].[PasswordFailuresSinceLastSuccess] AS [PasswordFailuresSinceLastSuccess], 
+      [webpages_Membership].[Password] AS [Password], 
+      [webpages_Membership].[PasswordChangedDate] AS [PasswordChangedDate], 
+      [webpages_Membership].[PasswordSalt] AS [PasswordSalt], 
+      [webpages_Membership].[PasswordVerificationToken] AS [PasswordVerificationToken], 
+      [webpages_Membership].[PasswordVerificationTokenExpirationDate] AS [PasswordVerificationTokenExpirationDate]
+      FROM [dbo].[webpages_Membership] AS [webpages_Membership]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="webpages_OAuthMembership" EntityType="zfy84Model.Store.webpages_OAuthMembership" store:Type="Tables" store:Schema="dbo" store:Name="webpages_OAuthMembership">
+            <DefiningQuery>SELECT 
+      [webpages_OAuthMembership].[Provider] AS [Provider], 
+      [webpages_OAuthMembership].[ProviderUserId] AS [ProviderUserId], 
+      [webpages_OAuthMembership].[UserId] AS [UserId]
+      FROM [dbo].[webpages_OAuthMembership] AS [webpages_OAuthMembership]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="webpages_Roles" EntityType="zfy84Model.Store.webpages_Roles" store:Type="Tables" store:Schema="dbo" store:Name="webpages_Roles">
+            <DefiningQuery>SELECT 
+      [webpages_Roles].[RoleId] AS [RoleId], 
+      [webpages_Roles].[RoleName] AS [RoleName]
+      FROM [dbo].[webpages_Roles] AS [webpages_Roles]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="webpages_UsersInRoles" EntityType="zfy84Model.Store.webpages_UsersInRoles" store:Type="Tables" store:Schema="dbo" store:Name="webpages_UsersInRoles">
+            <DefiningQuery>SELECT 
+      [webpages_UsersInRoles].[UserId] AS [UserId], 
+      [webpages_UsersInRoles].[RoleId] AS [RoleId]
+      FROM [dbo].[webpages_UsersInRoles] AS [webpages_UsersInRoles]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WorkStation" EntityType="zfy84Model.Store.WorkStation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WorkStationPath" EntityType="zfy84Model.Store.WorkStationPath" store:Type="Tables" store:Schema="dbo" store:Name="WorkStationPath">
+            <DefiningQuery>SELECT 
+      [WorkStationPath].[ID] AS [ID], 
+      [WorkStationPath].[WorkStationID] AS [WorkStationID], 
+      [WorkStationPath].[StorePath] AS [StorePath], 
+      [WorkStationPath].[VirtualPath] AS [VirtualPath], 
+      [WorkStationPath].[Ord] AS [Ord]
+      FROM [dbo].[WorkStationPath] AS [WorkStationPath]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WorkStationPathInfo" EntityType="zfy84Model.Store.WorkStationPathInfo" store:Type="Tables" store:Schema="dbo" store:Name="WorkStationPathInfo">
+            <DefiningQuery>SELECT 
+      [WorkStationPathInfo].[WorkStationPathID] AS [WorkStationPathID], 
+      [WorkStationPathInfo].[WorkStationID] AS [WorkStationID], 
+      [WorkStationPathInfo].[WorkStationName] AS [WorkStationName], 
+      [WorkStationPathInfo].[WorkStationIP] AS [WorkStationIP], 
+      [WorkStationPathInfo].[StorePath] AS [StorePath], 
+      [WorkStationPathInfo].[VirtualPath] AS [VirtualPath], 
+      [WorkStationPathInfo].[Ord] AS [Ord]
+      FROM [dbo].[WorkStationPathInfo] AS [WorkStationPathInfo]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DevNo" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="PolNo" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="LastConnected" Type="datetime" Nullable="false" />
+          <Property Name="VideosLastUploaded" Type="int" Nullable="false" />
+          <Property Name="DeviceStatus" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="DeviceStatusProgress" Type="int" />
+        </EntityType>
+        <EntityType Name="Doc">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="PolNo" Type="varchar" MaxLength="20" />
+          <Property Name="DevNo" Type="varchar" MaxLength="20" />
+          <Property Name="PicDate" Type="smalldatetime" />
+          <Property Name="UpLoadDate" Type="smalldatetime" />
+          <Property Name="GradeID" Type="int" />
+          <Property Name="DocType" Type="int" />
+          <Property Name="Comment" Type="varchar" MaxLength="200" />
+          <Property Name="PrevFile" Type="varchar" MaxLength="60" />
+          <Property Name="DestFile" Type="varchar" MaxLength="60" />
+          <Property Name="FaceFile" Type="varchar" MaxLength="60" />
+          <Property Name="GPSFile" Type="varchar" MaxLength="60" />
+          <Property Name="Param" Type="varchar" MaxLength="200" />
+          <Property Name="StaffID" Type="int" />
+          <Property Name="IsFinished" Type="int" />
+          <Property Name="IsSele" Type="bit" />
+          <Property Name="WorkStationID" Type="int" />
+          <Property Name="StoreStatus" Type="int" />
+          <Property Name="VideoLength" Type="bigint" />
+          <Property Name="FileLength" Type="bigint" />
+          <Property Name="DocNo" Type="varchar" MaxLength="200" />
+          <Property Name="IsUpload" Type="int" />
+          <Property Name="UploadIp" Type="varchar" MaxLength="50" />
+          <Property Name="UploadPort" Type="varchar" MaxLength="50" />
+          <Property Name="IsDelete" Type="int" />
+          <Property Name="save_path" Type="varchar" MaxLength="200" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Location" Type="nvarchar" MaxLength="250" />
+          <Property Name="DocStatus" Type="nvarchar" MaxLength="100" />
+          <Property Name="DocStatusProgress" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.DocDownLoad' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="DocDownLoad">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="DocID" Type="int" />
+          <Property Name="StaffID" Type="int" />
+          <Property Name="DownLoadTime" Type="smalldatetime" />
+          <Property Name="ComputerName" Type="varchar" MaxLength="20" />
+          <Property Name="DoType" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.DocGrade' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="DocGrade">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="GradeName" Type="varchar" MaxLength="20" />
+          <Property Name="GradeEng" Type="varchar" MaxLength="20" />
+          <Property Name="DocGrade_Id_Pk" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.DocPreviewParam' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="DocPreviewParam">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="pImgW" Type="int" />
+          <Property Name="pImgH" Type="int" />
+          <Property Name="vVideoBitrate" Type="int" />
+          <Property Name="vAudioBitrate" Type="int" />
+          <Property Name="vAudioFreq" Type="int" />
+          <Property Name="vImgW" Type="int" />
+          <Property Name="vImgH" Type="int" />
+          <Property Name="vOriginalSize" Type="bit" />
+          <Property Name="aBitrate" Type="int" />
+          <Property Name="aFreq" Type="int" />
+          <Property Name="vPreImgW" Type="int" />
+          <Property Name="vPreImgH" Type="int" />
+          <Property Name="GenPreview" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.DocQry' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="DocQry">
+          <Key>
+            <PropertyRef Name="DocID" />
+          </Key>
+          <Property Name="DocID" Type="int" Nullable="false" />
+          <Property Name="PolNo" Type="varchar" MaxLength="20" />
+          <Property Name="PolDepartmentID" Type="int" />
+          <Property Name="PolDepartmentName" Type="varchar" MaxLength="60" />
+          <Property Name="DevNo" Type="varchar" MaxLength="20" />
+          <Property Name="StaffID" Type="int" />
+          <Property Name="PicDate" Type="smalldatetime" />
+          <Property Name="UpLoadDate" Type="smalldatetime" />
+          <Property Name="GradeID" Type="int" />
+          <Property Name="GradeName" Type="varchar" MaxLength="20" />
+          <Property Name="GradeEng" Type="varchar" MaxLength="20" />
+          <Property Name="DocTypeID" Type="int" />
+          <Property Name="DocTypeChs" Type="varchar" MaxLength="20" />
+          <Property Name="DocTypeEng" Type="varchar" MaxLength="20" />
+          <Property Name="Comment" Type="varchar" MaxLength="200" />
+          <Property Name="PrevFile" Type="varchar" MaxLength="60" />
+          <Property Name="DestFile" Type="varchar" MaxLength="60" />
+          <Property Name="FaceFile" Type="varchar" MaxLength="60" />
+          <Property Name="GPSFile" Type="varchar" MaxLength="60" />
+          <Property Name="Param" Type="varchar" MaxLength="200" />
+          <Property Name="UserName" Type="varchar" MaxLength="20" />
+          <Property Name="IsSele" Type="bit" />
+          <Property Name="IsFinished" Type="int" />
+          <Property Name="WorkStationID" Type="int" />
+          <Property Name="WorkStationName" Type="nvarchar" MaxLength="100" />
+          <Property Name="WorkStationIP" Type="varchar" MaxLength="50" />
+          <Property Name="WebAdd" Type="varchar" MaxLength="100" />
+          <Property Name="VirtualPath" Type="varchar" MaxLength="20" />
+          <Property Name="StoreStatus" Type="int" />
+          <Property Name="VideoLength" Type="bigint" />
+          <Property Name="FileLength" Type="bigint" />
+          <Property Name="DocNo" Type="varchar" MaxLength="200" />
+          <Property Name="LastPicDate" Type="smalldatetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.DocQryByCustom' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="DocQryByCustom">
+          <Key>
+            <PropertyRef Name="DocID" />
+          </Key>
+          <Property Name="DocID" Type="int" Nullable="false" />
+          <Property Name="PolNo" Type="varchar" MaxLength="20" />
+          <Property Name="PolDepartmentID" Type="int" />
+          <Property Name="PolDepartmentName" Type="varchar" MaxLength="60" />
+          <Property Name="DevNo" Type="varchar" MaxLength="20" />
+          <Property Name="StaffID" Type="int" />
+          <Property Name="PicDate" Type="smalldatetime" />
+          <Property Name="UpLoadDate" Type="smalldatetime" />
+          <Property Name="GradeID" Type="int" />
+          <Property Name="GradeName" Type="varchar" MaxLength="20" />
+          <Property Name="GradeEng" Type="varchar" MaxLength="20" />
+          <Property Name="DocTypeID" Type="int" />
+          <Property Name="DocTypeChs" Type="varchar" MaxLength="20" />
+          <Property Name="DocTypeEng" Type="varchar" MaxLength="20" />
+          <Property Name="Comment" Type="varchar" MaxLength="200" />
+          <Property Name="PrevFile" Type="varchar" MaxLength="60" />
+          <Property Name="DestFile" Type="varchar" MaxLength="60" />
+          <Property Name="FaceFile" Type="varchar" MaxLength="60" />
+          <Property Name="GPSFile" Type="varchar" MaxLength="60" />
+          <Property Name="Param" Type="varchar" MaxLength="200" />
+          <Property Name="UserName" Type="varchar" MaxLength="20" />
+          <Property Name="IsSele" Type="bit" />
+          <Property Name="IsFinished" Type="int" />
+          <Property Name="WorkStationID" Type="int" />
+          <Property Name="WorkStationName" Type="nvarchar" MaxLength="100" />
+          <Property Name="WorkStationIP" Type="varchar" MaxLength="50" />
+          <Property Name="WebAdd" Type="varchar" MaxLength="100" />
+          <Property Name="VirtualPath" Type="varchar" MaxLength="20" />
+          <Property Name="StoreStatus" Type="int" />
+          <Property Name="VideoLength" Type="bigint" />
+          <Property Name="FileLength" Type="bigint" />
+          <Property Name="DocNo" Type="varchar" MaxLength="200" />
+          <Property Name="LastPicDate" Type="smalldatetime" />
+          <Property Name="condition" Type="nvarchar" MaxLength="700" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.DocType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="DocType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NameChs" Type="varchar" MaxLength="20" />
+          <Property Name="NameEng" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.DocUpLoadSet' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="DocUpLoadSet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ServerID" Type="int" />
+          <Property Name="WorkStationID" Type="int" />
+          <Property Name="UploadTime" Type="varchar" MaxLength="10" />
+          <Property Name="GradeID" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.DocUpLoadSetIP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="DocUpLoadSetIP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ServerIP" Type="varchar" MaxLength="50" />
+          <Property Name="WorkStationIP" Type="varchar" MaxLength="50" />
+          <Property Name="UploadTime" Type="varchar" MaxLength="10" />
+          <Property Name="GradeID" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.EmailInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="EmailInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="60" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.Notes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Notes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="50" />
+          <Property Name="Comment" Type="varchar" MaxLength="1000" />
+          <Property Name="Publisher" Type="varchar" MaxLength="50" />
+          <Property Name="InDate" Type="smalldatetime" />
+          <Property Name="IsPop" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.OperateType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="OperateType">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="OperateName" />
+            <PropertyRef Name="EnglishName" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="OperateName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="EnglishName" Type="varchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.QryPhotoReadPath' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="QryPhotoReadPath">
+          <Key>
+            <PropertyRef Name="PathName" />
+            <PropertyRef Name="SrcOrder" />
+          </Key>
+          <Property Name="PathName" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="VirtualPath" Type="varchar" MaxLength="80" />
+          <Property Name="mmsPath" Type="varchar" MaxLength="80" />
+          <Property Name="SrcOrder" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.QryPhotoSavePath' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="QryPhotoSavePath">
+          <Key>
+            <PropertyRef Name="PathName" />
+          </Key>
+          <Property Name="PathName" Type="varchar" Nullable="false" MaxLength="80" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.RightGroup' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="RightGroup">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="GroupName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.RightGroupHas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="RightGroupHas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="RightGroupID" Type="int" />
+          <Property Name="RightNameID" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.RightGroupStaffDep' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="RightGroupStaffDep">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="RightGroupID" Type="int" />
+          <Property Name="StaffDepID" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.RightName' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="RightName">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" />
+          <Property Name="NameEng" Type="varchar" MaxLength="100" />
+          <Property Name="RightType" Type="int" />
+          <Property Name="ShowOrd" Type="int" />
+          <Property Name="SiteUrl" Type="varchar" MaxLength="300" />
+          <Property Name="MenuYayer" Type="int" />
+        </EntityType>
+        <EntityType Name="SaveCloudSpace">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Username" Type="nvarchar" MaxLength="100" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+          <Property Name="SpaceAvailable" Type="nvarchar" MaxLength="100" />
+          <Property Name="SpaceUsed" Type="nvarchar" MaxLength="100" />
+          <Property Name="EndPoint" Type="nvarchar" MaxLength="500" />
+          <Property Name="APIKey" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="SaveFilePath">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="SrcOrder" Type="int" Nullable="false" />
+          <Property Name="PathName" Type="varchar" Nullable="false" MaxLength="80" />
+          <Property Name="VirtualPath" Type="varchar" MaxLength="80" />
+          <Property Name="PathType" Type="int" />
+          <Property Name="mmsPath" Type="varchar" MaxLength="80" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.Sequences' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Sequences">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="CurVal" Type="int" />
+          <Property Name="Step" Type="int" />
+        </EntityType>
+        <EntityType Name="Servers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="IPaddress" Type="nvarchar" MaxLength="100" />
+          <Property Name="DocRetentionPeriod" Type="int" />
+          <Property Name="SpaceAvailable" Type="nvarchar" MaxLength="100" />
+          <Property Name="SpaceUsed" Type="nvarchar" MaxLength="100" />
+          <Property Name="StorePath" Type="varchar" MaxLength="100" />
+          <Property Name="SaveDays" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.Staff' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="UserLevel" Type="smallint" />
+          <Property Name="UserName" Type="varchar" MaxLength="20" />
+          <Property Name="LoginName" Type="varchar" MaxLength="20" />
+          <Property Name="PassWord" Type="varchar" MaxLength="32" />
+          <Property Name="CorpName" Type="varchar" MaxLength="100" />
+          <Property Name="Address" Type="varchar" MaxLength="100" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+          <Property Name="PolNo" Type="varchar" MaxLength="20" />
+          <Property Name="DevNo" Type="varchar" MaxLength="20" />
+          <Property Name="DevPwd" Type="varchar" MaxLength="20" />
+          <Property Name="DepartmentID" Type="int" />
+          <Property Name="Status" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="StaffDepartment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="ParentID" Type="int" />
+          <Property Name="DepartName" Type="varchar" MaxLength="60" />
+          <Property Name="ShowOrd" Type="int" />
+          <Property Name="DepartLayer" Type="int" />
+          <Property Name="IsShow" Type="bit" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.StaffRight' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="StaffRight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="StaffID" Type="int" />
+          <Property Name="RightGroupID" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.StaffRightHas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="StaffRightHas">
+          <Key>
+            <PropertyRef Name="StaffID" />
+          </Key>
+          <Property Name="StaffID" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="20" />
+          <Property Name="RightGroupID" Type="int" />
+          <Property Name="RightNameID" Type="int" />
+          <Property Name="RightName" Type="varchar" MaxLength="20" />
+          <Property Name="PolDepartmentID" Type="int" />
+          <Property Name="Siteurl" Type="varchar" MaxLength="300" />
+          <Property Name="MenuYayer" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.SysNote' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="SysNote">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="RightNameID" />
+            <PropertyRef Name="OperateTypeID" />
+            <PropertyRef Name="OperateDate" />
+            <PropertyRef Name="IpAddr" />
+            <PropertyRef Name="StaffID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="RightNameID" Type="int" Nullable="false" />
+          <Property Name="OperateTypeID" Type="int" Nullable="false" />
+          <Property Name="OperateDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="IpAddr" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="StaffID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.SysNoteRead' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="SysNoteRead">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="rightnameid" />
+            <PropertyRef Name="operatetypeid" />
+            <PropertyRef Name="operatename" />
+            <PropertyRef Name="englishname" />
+            <PropertyRef Name="operatedate" />
+            <PropertyRef Name="ipaddr" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="rightnameid" Type="int" Nullable="false" />
+          <Property Name="operatetypeid" Type="int" Nullable="false" />
+          <Property Name="operatename" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="englishname" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="operatedate" Type="smalldatetime" Nullable="false" />
+          <Property Name="ipaddr" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="polno" Type="varchar" MaxLength="20" />
+          <Property Name="username" Type="varchar" MaxLength="20" />
+          <Property Name="rightName" Type="varchar" MaxLength="20" />
+          <Property Name="rightNameEng" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.SysRec' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="SysRec">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="StartTime" Type="smalldatetime" />
+          <Property Name="EndTime" Type="smalldatetime" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="ComputerName" Type="varchar" MaxLength="20" />
+          <Property Name="RightNameID" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.TimingExportExecel' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="TimingExportExecel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ExportTime" Type="varchar" MaxLength="20" />
+          <Property Name="SenderEmail" Type="varchar" MaxLength="20" />
+          <Property Name="SenderEmailPwd" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.UserProfile' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="56" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.webpages_Membership' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="webpages_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="PasswordFailuresSinceLastSuccess" />
+            <PropertyRef Name="Password" />
+            <PropertyRef Name="PasswordSalt" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="smalldatetime" />
+          <Property Name="ConfirmationToken" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsConfirmed" Type="bit" />
+          <Property Name="LastPasswordFailureDate" Type="smalldatetime" />
+          <Property Name="PasswordFailuresSinceLastSuccess" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordChangedDate" Type="smalldatetime" />
+          <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordVerificationToken" Type="nvarchar" MaxLength="128" />
+          <Property Name="PasswordVerificationTokenExpirationDate" Type="smalldatetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.webpages_OAuthMembership' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="webpages_OAuthMembership">
+          <Key>
+            <PropertyRef Name="Provider" />
+            <PropertyRef Name="ProviderUserId" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="Provider" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="ProviderUserId" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.webpages_Roles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="webpages_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="RoleName" />
+          </Key>
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.webpages_UsersInRoles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="webpages_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WorkStation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="WorkStationname" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="WorkStationIP" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="WebAdd" Type="varchar" MaxLength="100" />
+          <Property Name="SaveDays" Type="int" />
+          <Property Name="StationType" Type="int" />
+          <Property Name="StorePath" Type="varchar" MaxLength="50" />
+          <Property Name="VirtualPath" Type="varchar" MaxLength="20" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.WorkStationPath' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="WorkStationPath">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="WorkStationID" Type="int" />
+          <Property Name="StorePath" Type="varchar" MaxLength="50" />
+          <Property Name="VirtualPath" Type="varchar" MaxLength="20" />
+          <Property Name="Ord" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DB_93972_bmp.dbo.WorkStationPathInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="WorkStationPathInfo">
+          <Key>
+            <PropertyRef Name="WorkStationPathID" />
+          </Key>
+          <Property Name="WorkStationPathID" Type="int" Nullable="false" />
+          <Property Name="WorkStationID" Type="int" />
+          <Property Name="WorkStationName" Type="nvarchar" MaxLength="100" />
+          <Property Name="WorkStationIP" Type="varchar" MaxLength="50" />
+          <Property Name="StorePath" Type="varchar" MaxLength="50" />
+          <Property Name="VirtualPath" Type="varchar" MaxLength="20" />
+          <Property Name="Ord" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6013: The table/view 'DB_93972_bmp.dbo.StaffStatus' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="StaffStatus">
+        <Property Name="StatusName" Type="varchar" MaxLength="10" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'DB_93972_bmp.dbo.WorkStationPathSrc' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="WorkStationPathSrc">
+        <Property Name="WorkStationName" Type="nvarchar" MaxLength="100" />
+        <Property Name="WorkStationIP" Type="varchar" MaxLength="50" />
+        <Property Name="StorePath" Type="varchar" MaxLength="50" />
+        <Property Name="VirtualPath" Type="varchar" MaxLength="20" />
+      </EntityType>-->
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="zfy84Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="zfy84Entities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Devices" EntityType="zfy84Model.Device" />
+          <EntitySet Name="Docs" EntityType="zfy84Model.Doc" />
+          <EntitySet Name="DocDownLoads" EntityType="zfy84Model.DocDownLoad" />
+          <EntitySet Name="DocGrades" EntityType="zfy84Model.DocGrade" />
+          <EntitySet Name="DocPreviewParams" EntityType="zfy84Model.DocPreviewParam" />
+          <EntitySet Name="DocQries" EntityType="zfy84Model.DocQry" />
+          <EntitySet Name="DocQryByCustoms" EntityType="zfy84Model.DocQryByCustom" />
+          <EntitySet Name="DocTypes" EntityType="zfy84Model.DocType" />
+          <EntitySet Name="DocUpLoadSets" EntityType="zfy84Model.DocUpLoadSet" />
+          <EntitySet Name="DocUpLoadSetIPs" EntityType="zfy84Model.DocUpLoadSetIP" />
+          <EntitySet Name="EmailInfoes" EntityType="zfy84Model.EmailInfo" />
+          <EntitySet Name="Notes" EntityType="zfy84Model.Note" />
+          <EntitySet Name="OperateTypes" EntityType="zfy84Model.OperateType" />
+          <EntitySet Name="QryPhotoReadPaths" EntityType="zfy84Model.QryPhotoReadPath" />
+          <EntitySet Name="QryPhotoSavePaths" EntityType="zfy84Model.QryPhotoSavePath" />
+          <EntitySet Name="RightGroups" EntityType="zfy84Model.RightGroup" />
+          <EntitySet Name="RightGroupHas" EntityType="zfy84Model.RightGroupHa" />
+          <EntitySet Name="RightGroupStaffDeps" EntityType="zfy84Model.RightGroupStaffDep" />
+          <EntitySet Name="RightNames" EntityType="zfy84Model.RightName" />
+          <EntitySet Name="SaveCloudSpaces" EntityType="zfy84Model.SaveCloudSpace" />
+          <EntitySet Name="SaveFilePaths" EntityType="zfy84Model.SaveFilePath" />
+          <EntitySet Name="Sequences" EntityType="zfy84Model.Sequence" />
+          <EntitySet Name="Servers" EntityType="zfy84Model.Server" />
+          <EntitySet Name="Staffs" EntityType="zfy84Model.Staff" />
+          <EntitySet Name="StaffDepartments" EntityType="zfy84Model.StaffDepartment" />
+          <EntitySet Name="StaffRights" EntityType="zfy84Model.StaffRight" />
+          <EntitySet Name="StaffRightHas" EntityType="zfy84Model.StaffRightHa" />
+          <EntitySet Name="SysNotes" EntityType="zfy84Model.SysNote" />
+          <EntitySet Name="SysNoteReads" EntityType="zfy84Model.SysNoteRead" />
+          <EntitySet Name="SysRecs" EntityType="zfy84Model.SysRec" />
+          <EntitySet Name="TimingExportExecels" EntityType="zfy84Model.TimingExportExecel" />
+          <EntitySet Name="UserProfiles" EntityType="zfy84Model.UserProfile" />
+          <EntitySet Name="webpages_Membership" EntityType="zfy84Model.webpages_Membership" />
+          <EntitySet Name="webpages_OAuthMembership" EntityType="zfy84Model.webpages_OAuthMembership" />
+          <EntitySet Name="webpages_Roles" EntityType="zfy84Model.webpages_Roles" />
+          <EntitySet Name="webpages_UsersInRoles" EntityType="zfy84Model.webpages_UsersInRoles" />
+          <EntitySet Name="WorkStations" EntityType="zfy84Model.WorkStation" />
+          <EntitySet Name="WorkStationPaths" EntityType="zfy84Model.WorkStationPath" />
+          <EntitySet Name="WorkStationPathInfoes" EntityType="zfy84Model.WorkStationPathInfo" />
+        </EntityContainer>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DevNo" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="PolNo" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="LastConnected" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="VideosLastUploaded" Type="Int32" Nullable="false" />
+          <Property Name="DeviceStatus" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DeviceStatusProgress" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Doc">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="PolNo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DevNo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PicDate" Type="DateTime" Precision="0" />
+          <Property Name="UpLoadDate" Type="DateTime" Precision="0" />
+          <Property Name="GradeID" Type="Int32" />
+          <Property Name="DocType" Type="Int32" />
+          <Property Name="Comment" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="PrevFile" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="DestFile" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="FaceFile" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="GPSFile" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="Param" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="StaffID" Type="Int32" />
+          <Property Name="IsFinished" Type="Int32" />
+          <Property Name="IsSele" Type="Boolean" />
+          <Property Name="WorkStationID" Type="Int32" />
+          <Property Name="StoreStatus" Type="Int32" />
+          <Property Name="VideoLength" Type="Int64" />
+          <Property Name="FileLength" Type="Int64" />
+          <Property Name="DocNo" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="IsUpload" Type="Int32" />
+          <Property Name="UploadIp" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UploadPort" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IsDelete" Type="Int32" />
+          <Property Name="save_path" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Location" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="DocStatus" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="DocStatusProgress" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DocDownLoad">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="DocID" Type="Int32" />
+          <Property Name="StaffID" Type="Int32" />
+          <Property Name="DownLoadTime" Type="DateTime" Precision="0" />
+          <Property Name="ComputerName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DoType" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DocGrade">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="GradeName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="GradeEng" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DocGrade_Id_Pk" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DocPreviewParam">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="pImgW" Type="Int32" />
+          <Property Name="pImgH" Type="Int32" />
+          <Property Name="vVideoBitrate" Type="Int32" />
+          <Property Name="vAudioBitrate" Type="Int32" />
+          <Property Name="vAudioFreq" Type="Int32" />
+          <Property Name="vImgW" Type="Int32" />
+          <Property Name="vImgH" Type="Int32" />
+          <Property Name="vOriginalSize" Type="Boolean" />
+          <Property Name="aBitrate" Type="Int32" />
+          <Property Name="aFreq" Type="Int32" />
+          <Property Name="vPreImgW" Type="Int32" />
+          <Property Name="vPreImgH" Type="Int32" />
+          <Property Name="GenPreview" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="DocQry">
+          <Key>
+            <PropertyRef Name="DocID" />
+          </Key>
+          <Property Name="DocID" Type="Int32" Nullable="false" />
+          <Property Name="PolNo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PolDepartmentID" Type="Int32" />
+          <Property Name="PolDepartmentName" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="DevNo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="StaffID" Type="Int32" />
+          <Property Name="PicDate" Type="DateTime" Precision="0" />
+          <Property Name="UpLoadDate" Type="DateTime" Precision="0" />
+          <Property Name="GradeID" Type="Int32" />
+          <Property Name="GradeName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="GradeEng" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DocTypeID" Type="Int32" />
+          <Property Name="DocTypeChs" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DocTypeEng" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Comment" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="PrevFile" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="DestFile" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="FaceFile" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="GPSFile" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="Param" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="UserName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="IsSele" Type="Boolean" />
+          <Property Name="IsFinished" Type="Int32" />
+          <Property Name="WorkStationID" Type="Int32" />
+          <Property Name="WorkStationName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="WorkStationIP" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="WebAdd" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="VirtualPath" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="StoreStatus" Type="Int32" />
+          <Property Name="VideoLength" Type="Int64" />
+          <Property Name="FileLength" Type="Int64" />
+          <Property Name="DocNo" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="LastPicDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="DocQryByCustom">
+          <Key>
+            <PropertyRef Name="DocID" />
+          </Key>
+          <Property Name="DocID" Type="Int32" Nullable="false" />
+          <Property Name="PolNo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PolDepartmentID" Type="Int32" />
+          <Property Name="PolDepartmentName" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="DevNo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="StaffID" Type="Int32" />
+          <Property Name="PicDate" Type="DateTime" Precision="0" />
+          <Property Name="UpLoadDate" Type="DateTime" Precision="0" />
+          <Property Name="GradeID" Type="Int32" />
+          <Property Name="GradeName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="GradeEng" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DocTypeID" Type="Int32" />
+          <Property Name="DocTypeChs" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DocTypeEng" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Comment" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="PrevFile" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="DestFile" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="FaceFile" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="GPSFile" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="Param" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="UserName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="IsSele" Type="Boolean" />
+          <Property Name="IsFinished" Type="Int32" />
+          <Property Name="WorkStationID" Type="Int32" />
+          <Property Name="WorkStationName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="WorkStationIP" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="WebAdd" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="VirtualPath" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="StoreStatus" Type="Int32" />
+          <Property Name="VideoLength" Type="Int64" />
+          <Property Name="FileLength" Type="Int64" />
+          <Property Name="DocNo" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="LastPicDate" Type="DateTime" Precision="0" />
+          <Property Name="condition" Type="String" MaxLength="700" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="DocType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NameChs" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="NameEng" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="DocUpLoadSet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ServerID" Type="Int32" />
+          <Property Name="WorkStationID" Type="Int32" />
+          <Property Name="UploadTime" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="GradeID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DocUpLoadSetIP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ServerIP" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="WorkStationIP" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UploadTime" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="GradeID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="EmailInfo">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="60" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Note">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Comment" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="Publisher" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="InDate" Type="DateTime" Precision="0" />
+          <Property Name="IsPop" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="OperateType">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="OperateName" />
+            <PropertyRef Name="EnglishName" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="OperateName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EnglishName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="QryPhotoReadPath">
+          <Key>
+            <PropertyRef Name="PathName" />
+            <PropertyRef Name="SrcOrder" />
+          </Key>
+          <Property Name="PathName" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="VirtualPath" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="mmsPath" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="SrcOrder" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QryPhotoSavePath">
+          <Key>
+            <PropertyRef Name="PathName" />
+          </Key>
+          <Property Name="PathName" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="RightGroup">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="GroupName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="RightGroupHa">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="RightGroupID" Type="Int32" />
+          <Property Name="RightNameID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="RightGroupStaffDep">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="RightGroupID" Type="Int32" />
+          <Property Name="StaffDepID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="RightName">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="NameEng" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="RightType" Type="Int32" />
+          <Property Name="ShowOrd" Type="Int32" />
+          <Property Name="SiteUrl" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <Property Name="MenuYayer" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SaveCloudSpace">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Username" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="SpaceAvailable" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="SpaceUsed" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="EndPoint" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="APIKey" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SaveFilePath">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="SrcOrder" Type="Int32" Nullable="false" />
+          <Property Name="PathName" Type="String" Nullable="false" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="VirtualPath" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="PathType" Type="Int32" />
+          <Property Name="mmsPath" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Sequence">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CurVal" Type="Int32" />
+          <Property Name="Step" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Server">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IPaddress" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="DocRetentionPeriod" Type="Int32" />
+          <Property Name="SpaceAvailable" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="SpaceUsed" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="StorePath" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SaveDays" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="UserLevel" Type="Int16" />
+          <Property Name="UserName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="LoginName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PassWord" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="CorpName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PolNo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DevNo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DevPwd" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DepartmentID" Type="Int32" />
+          <Property Name="Status" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="StaffDepartment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="ParentID" Type="Int32" />
+          <Property Name="DepartName" Type="String" MaxLength="60" Unicode="false" FixedLength="false" />
+          <Property Name="ShowOrd" Type="Int32" />
+          <Property Name="DepartLayer" Type="Int32" />
+          <Property Name="IsShow" Type="Boolean" />
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="StaffRight">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="StaffID" Type="Int32" />
+          <Property Name="RightGroupID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="StaffRightHa">
+          <Key>
+            <PropertyRef Name="StaffID" />
+          </Key>
+          <Property Name="StaffID" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="RightGroupID" Type="Int32" />
+          <Property Name="RightNameID" Type="Int32" />
+          <Property Name="RightName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PolDepartmentID" Type="Int32" />
+          <Property Name="Siteurl" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+          <Property Name="MenuYayer" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SysNote">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="RightNameID" />
+            <PropertyRef Name="OperateTypeID" />
+            <PropertyRef Name="OperateDate" />
+            <PropertyRef Name="IpAddr" />
+            <PropertyRef Name="StaffID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="RightNameID" Type="Int32" Nullable="false" />
+          <Property Name="OperateTypeID" Type="Int32" Nullable="false" />
+          <Property Name="OperateDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IpAddr" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="StaffID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SysNoteRead">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="rightnameid" />
+            <PropertyRef Name="operatetypeid" />
+            <PropertyRef Name="operatename" />
+            <PropertyRef Name="englishname" />
+            <PropertyRef Name="operatedate" />
+            <PropertyRef Name="ipaddr" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="rightnameid" Type="Int32" Nullable="false" />
+          <Property Name="operatetypeid" Type="Int32" Nullable="false" />
+          <Property Name="operatename" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="englishname" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="operatedate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ipaddr" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="polno" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="username" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="rightName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="rightNameEng" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SysRec">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="StartTime" Type="DateTime" Precision="0" />
+          <Property Name="EndTime" Type="DateTime" Precision="0" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="ComputerName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="RightNameID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TimingExportExecel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ExportTime" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="SenderEmail" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="SenderEmailPwd" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="56" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="webpages_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="PasswordFailuresSinceLastSuccess" />
+            <PropertyRef Name="Password" />
+            <PropertyRef Name="PasswordSalt" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="0" />
+          <Property Name="ConfirmationToken" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="IsConfirmed" Type="Boolean" />
+          <Property Name="LastPasswordFailureDate" Type="DateTime" Precision="0" />
+          <Property Name="PasswordFailuresSinceLastSuccess" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordChangedDate" Type="DateTime" Precision="0" />
+          <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordVerificationToken" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordVerificationTokenExpirationDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="webpages_OAuthMembership">
+          <Key>
+            <PropertyRef Name="Provider" />
+            <PropertyRef Name="ProviderUserId" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="Provider" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="ProviderUserId" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="webpages_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="RoleName" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="webpages_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WorkStation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="WorkStationname" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="WorkStationIP" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="WebAdd" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="SaveDays" Type="Int32" />
+          <Property Name="StationType" Type="Int32" />
+          <Property Name="StorePath" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="VirtualPath" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="WorkStationPath">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="WorkStationID" Type="Int32" />
+          <Property Name="StorePath" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="VirtualPath" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Ord" Type="Int32" />
+        </EntityType>
+        <EntityType Name="WorkStationPathInfo">
+          <Key>
+            <PropertyRef Name="WorkStationPathID" />
+          </Key>
+          <Property Name="WorkStationPathID" Type="Int32" Nullable="false" />
+          <Property Name="WorkStationID" Type="Int32" />
+          <Property Name="WorkStationName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="WorkStationIP" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="StorePath" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="VirtualPath" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Ord" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="zfy84ModelStoreContainer" CdmEntityContainer="zfy84Entities">
+          <EntitySetMapping Name="Devices">
+            <EntityTypeMapping TypeName="zfy84Model.Device">
+              <MappingFragment StoreEntitySet="Device">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DevNo" ColumnName="DevNo" />
+                <ScalarProperty Name="PolNo" ColumnName="PolNo" />
+                <ScalarProperty Name="LastConnected" ColumnName="LastConnected" />
+                <ScalarProperty Name="VideosLastUploaded" ColumnName="VideosLastUploaded" />
+                <ScalarProperty Name="DeviceStatus" ColumnName="DeviceStatus" />
+                <ScalarProperty Name="DeviceStatusProgress" ColumnName="DeviceStatusProgress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Docs">
+            <EntityTypeMapping TypeName="zfy84Model.Doc">
+              <MappingFragment StoreEntitySet="Doc">
+                <ScalarProperty Name="PolNo" ColumnName="PolNo" />
+                <ScalarProperty Name="DevNo" ColumnName="DevNo" />
+                <ScalarProperty Name="PicDate" ColumnName="PicDate" />
+                <ScalarProperty Name="UpLoadDate" ColumnName="UpLoadDate" />
+                <ScalarProperty Name="GradeID" ColumnName="GradeID" />
+                <ScalarProperty Name="DocType" ColumnName="DocType" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="PrevFile" ColumnName="PrevFile" />
+                <ScalarProperty Name="DestFile" ColumnName="DestFile" />
+                <ScalarProperty Name="FaceFile" ColumnName="FaceFile" />
+                <ScalarProperty Name="GPSFile" ColumnName="GPSFile" />
+                <ScalarProperty Name="Param" ColumnName="Param" />
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="IsFinished" ColumnName="IsFinished" />
+                <ScalarProperty Name="IsSele" ColumnName="IsSele" />
+                <ScalarProperty Name="WorkStationID" ColumnName="WorkStationID" />
+                <ScalarProperty Name="StoreStatus" ColumnName="StoreStatus" />
+                <ScalarProperty Name="VideoLength" ColumnName="VideoLength" />
+                <ScalarProperty Name="FileLength" ColumnName="FileLength" />
+                <ScalarProperty Name="DocNo" ColumnName="DocNo" />
+                <ScalarProperty Name="IsUpload" ColumnName="IsUpload" />
+                <ScalarProperty Name="UploadIp" ColumnName="UploadIp" />
+                <ScalarProperty Name="UploadPort" ColumnName="UploadPort" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="save_path" ColumnName="save_path" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="DocStatus" ColumnName="DocStatus" />
+                <ScalarProperty Name="DocStatusProgress" ColumnName="DocStatusProgress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocDownLoads">
+            <EntityTypeMapping TypeName="zfy84Model.DocDownLoad">
+              <MappingFragment StoreEntitySet="DocDownLoad">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DocID" ColumnName="DocID" />
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="DownLoadTime" ColumnName="DownLoadTime" />
+                <ScalarProperty Name="ComputerName" ColumnName="ComputerName" />
+                <ScalarProperty Name="DoType" ColumnName="DoType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocGrades">
+            <EntityTypeMapping TypeName="zfy84Model.DocGrade">
+              <MappingFragment StoreEntitySet="DocGrade">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="GradeName" ColumnName="GradeName" />
+                <ScalarProperty Name="GradeEng" ColumnName="GradeEng" />
+                <ScalarProperty Name="DocGrade_Id_Pk" ColumnName="DocGrade_Id_Pk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocPreviewParams">
+            <EntityTypeMapping TypeName="zfy84Model.DocPreviewParam">
+              <MappingFragment StoreEntitySet="DocPreviewParam">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="pImgW" ColumnName="pImgW" />
+                <ScalarProperty Name="pImgH" ColumnName="pImgH" />
+                <ScalarProperty Name="vVideoBitrate" ColumnName="vVideoBitrate" />
+                <ScalarProperty Name="vAudioBitrate" ColumnName="vAudioBitrate" />
+                <ScalarProperty Name="vAudioFreq" ColumnName="vAudioFreq" />
+                <ScalarProperty Name="vImgW" ColumnName="vImgW" />
+                <ScalarProperty Name="vImgH" ColumnName="vImgH" />
+                <ScalarProperty Name="vOriginalSize" ColumnName="vOriginalSize" />
+                <ScalarProperty Name="aBitrate" ColumnName="aBitrate" />
+                <ScalarProperty Name="aFreq" ColumnName="aFreq" />
+                <ScalarProperty Name="vPreImgW" ColumnName="vPreImgW" />
+                <ScalarProperty Name="vPreImgH" ColumnName="vPreImgH" />
+                <ScalarProperty Name="GenPreview" ColumnName="GenPreview" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocQries">
+            <EntityTypeMapping TypeName="zfy84Model.DocQry">
+              <MappingFragment StoreEntitySet="DocQry">
+                <ScalarProperty Name="DocID" ColumnName="DocID" />
+                <ScalarProperty Name="PolNo" ColumnName="PolNo" />
+                <ScalarProperty Name="PolDepartmentID" ColumnName="PolDepartmentID" />
+                <ScalarProperty Name="PolDepartmentName" ColumnName="PolDepartmentName" />
+                <ScalarProperty Name="DevNo" ColumnName="DevNo" />
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="PicDate" ColumnName="PicDate" />
+                <ScalarProperty Name="UpLoadDate" ColumnName="UpLoadDate" />
+                <ScalarProperty Name="GradeID" ColumnName="GradeID" />
+                <ScalarProperty Name="GradeName" ColumnName="GradeName" />
+                <ScalarProperty Name="GradeEng" ColumnName="GradeEng" />
+                <ScalarProperty Name="DocTypeID" ColumnName="DocTypeID" />
+                <ScalarProperty Name="DocTypeChs" ColumnName="DocTypeChs" />
+                <ScalarProperty Name="DocTypeEng" ColumnName="DocTypeEng" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="PrevFile" ColumnName="PrevFile" />
+                <ScalarProperty Name="DestFile" ColumnName="DestFile" />
+                <ScalarProperty Name="FaceFile" ColumnName="FaceFile" />
+                <ScalarProperty Name="GPSFile" ColumnName="GPSFile" />
+                <ScalarProperty Name="Param" ColumnName="Param" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="IsSele" ColumnName="IsSele" />
+                <ScalarProperty Name="IsFinished" ColumnName="IsFinished" />
+                <ScalarProperty Name="WorkStationID" ColumnName="WorkStationID" />
+                <ScalarProperty Name="WorkStationName" ColumnName="WorkStationName" />
+                <ScalarProperty Name="WorkStationIP" ColumnName="WorkStationIP" />
+                <ScalarProperty Name="WebAdd" ColumnName="WebAdd" />
+                <ScalarProperty Name="VirtualPath" ColumnName="VirtualPath" />
+                <ScalarProperty Name="StoreStatus" ColumnName="StoreStatus" />
+                <ScalarProperty Name="VideoLength" ColumnName="VideoLength" />
+                <ScalarProperty Name="FileLength" ColumnName="FileLength" />
+                <ScalarProperty Name="DocNo" ColumnName="DocNo" />
+                <ScalarProperty Name="LastPicDate" ColumnName="LastPicDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocQryByCustoms">
+            <EntityTypeMapping TypeName="zfy84Model.DocQryByCustom">
+              <MappingFragment StoreEntitySet="DocQryByCustom">
+                <ScalarProperty Name="DocID" ColumnName="DocID" />
+                <ScalarProperty Name="PolNo" ColumnName="PolNo" />
+                <ScalarProperty Name="PolDepartmentID" ColumnName="PolDepartmentID" />
+                <ScalarProperty Name="PolDepartmentName" ColumnName="PolDepartmentName" />
+                <ScalarProperty Name="DevNo" ColumnName="DevNo" />
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="PicDate" ColumnName="PicDate" />
+                <ScalarProperty Name="UpLoadDate" ColumnName="UpLoadDate" />
+                <ScalarProperty Name="GradeID" ColumnName="GradeID" />
+                <ScalarProperty Name="GradeName" ColumnName="GradeName" />
+                <ScalarProperty Name="GradeEng" ColumnName="GradeEng" />
+                <ScalarProperty Name="DocTypeID" ColumnName="DocTypeID" />
+                <ScalarProperty Name="DocTypeChs" ColumnName="DocTypeChs" />
+                <ScalarProperty Name="DocTypeEng" ColumnName="DocTypeEng" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="PrevFile" ColumnName="PrevFile" />
+                <ScalarProperty Name="DestFile" ColumnName="DestFile" />
+                <ScalarProperty Name="FaceFile" ColumnName="FaceFile" />
+                <ScalarProperty Name="GPSFile" ColumnName="GPSFile" />
+                <ScalarProperty Name="Param" ColumnName="Param" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="IsSele" ColumnName="IsSele" />
+                <ScalarProperty Name="IsFinished" ColumnName="IsFinished" />
+                <ScalarProperty Name="WorkStationID" ColumnName="WorkStationID" />
+                <ScalarProperty Name="WorkStationName" ColumnName="WorkStationName" />
+                <ScalarProperty Name="WorkStationIP" ColumnName="WorkStationIP" />
+                <ScalarProperty Name="WebAdd" ColumnName="WebAdd" />
+                <ScalarProperty Name="VirtualPath" ColumnName="VirtualPath" />
+                <ScalarProperty Name="StoreStatus" ColumnName="StoreStatus" />
+                <ScalarProperty Name="VideoLength" ColumnName="VideoLength" />
+                <ScalarProperty Name="FileLength" ColumnName="FileLength" />
+                <ScalarProperty Name="DocNo" ColumnName="DocNo" />
+                <ScalarProperty Name="LastPicDate" ColumnName="LastPicDate" />
+                <ScalarProperty Name="condition" ColumnName="condition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocTypes">
+            <EntityTypeMapping TypeName="zfy84Model.DocType">
+              <MappingFragment StoreEntitySet="DocType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NameChs" ColumnName="NameChs" />
+                <ScalarProperty Name="NameEng" ColumnName="NameEng" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocUpLoadSets">
+            <EntityTypeMapping TypeName="zfy84Model.DocUpLoadSet">
+              <MappingFragment StoreEntitySet="DocUpLoadSet">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ServerID" ColumnName="ServerID" />
+                <ScalarProperty Name="WorkStationID" ColumnName="WorkStationID" />
+                <ScalarProperty Name="UploadTime" ColumnName="UploadTime" />
+                <ScalarProperty Name="GradeID" ColumnName="GradeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocUpLoadSetIPs">
+            <EntityTypeMapping TypeName="zfy84Model.DocUpLoadSetIP">
+              <MappingFragment StoreEntitySet="DocUpLoadSetIP">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ServerIP" ColumnName="ServerIP" />
+                <ScalarProperty Name="WorkStationIP" ColumnName="WorkStationIP" />
+                <ScalarProperty Name="UploadTime" ColumnName="UploadTime" />
+                <ScalarProperty Name="GradeID" ColumnName="GradeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmailInfoes">
+            <EntityTypeMapping TypeName="zfy84Model.EmailInfo">
+              <MappingFragment StoreEntitySet="EmailInfo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notes">
+            <EntityTypeMapping TypeName="zfy84Model.Note">
+              <MappingFragment StoreEntitySet="Notes">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+                <ScalarProperty Name="InDate" ColumnName="InDate" />
+                <ScalarProperty Name="IsPop" ColumnName="IsPop" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OperateTypes">
+            <EntityTypeMapping TypeName="zfy84Model.OperateType">
+              <MappingFragment StoreEntitySet="OperateType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OperateName" ColumnName="OperateName" />
+                <ScalarProperty Name="EnglishName" ColumnName="EnglishName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QryPhotoReadPaths">
+            <EntityTypeMapping TypeName="zfy84Model.QryPhotoReadPath">
+              <MappingFragment StoreEntitySet="QryPhotoReadPath">
+                <ScalarProperty Name="PathName" ColumnName="PathName" />
+                <ScalarProperty Name="VirtualPath" ColumnName="VirtualPath" />
+                <ScalarProperty Name="mmsPath" ColumnName="mmsPath" />
+                <ScalarProperty Name="SrcOrder" ColumnName="SrcOrder" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QryPhotoSavePaths">
+            <EntityTypeMapping TypeName="zfy84Model.QryPhotoSavePath">
+              <MappingFragment StoreEntitySet="QryPhotoSavePath">
+                <ScalarProperty Name="PathName" ColumnName="PathName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RightGroups">
+            <EntityTypeMapping TypeName="zfy84Model.RightGroup">
+              <MappingFragment StoreEntitySet="RightGroup">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RightGroupHas">
+            <EntityTypeMapping TypeName="zfy84Model.RightGroupHa">
+              <MappingFragment StoreEntitySet="RightGroupHas">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RightGroupID" ColumnName="RightGroupID" />
+                <ScalarProperty Name="RightNameID" ColumnName="RightNameID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RightGroupStaffDeps">
+            <EntityTypeMapping TypeName="zfy84Model.RightGroupStaffDep">
+              <MappingFragment StoreEntitySet="RightGroupStaffDep">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RightGroupID" ColumnName="RightGroupID" />
+                <ScalarProperty Name="StaffDepID" ColumnName="StaffDepID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RightNames">
+            <EntityTypeMapping TypeName="zfy84Model.RightName">
+              <MappingFragment StoreEntitySet="RightName">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="NameEng" ColumnName="NameEng" />
+                <ScalarProperty Name="RightType" ColumnName="RightType" />
+                <ScalarProperty Name="ShowOrd" ColumnName="ShowOrd" />
+                <ScalarProperty Name="SiteUrl" ColumnName="SiteUrl" />
+                <ScalarProperty Name="MenuYayer" ColumnName="MenuYayer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaveCloudSpaces">
+            <EntityTypeMapping TypeName="zfy84Model.SaveCloudSpace">
+              <MappingFragment StoreEntitySet="SaveCloudSpace">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="SpaceAvailable" ColumnName="SpaceAvailable" />
+                <ScalarProperty Name="SpaceUsed" ColumnName="SpaceUsed" />
+                <ScalarProperty Name="EndPoint" ColumnName="EndPoint" />
+                <ScalarProperty Name="APIKey" ColumnName="APIKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaveFilePaths">
+            <EntityTypeMapping TypeName="zfy84Model.SaveFilePath">
+              <MappingFragment StoreEntitySet="SaveFilePath">
+                <ScalarProperty Name="SrcOrder" ColumnName="SrcOrder" />
+                <ScalarProperty Name="PathName" ColumnName="PathName" />
+                <ScalarProperty Name="VirtualPath" ColumnName="VirtualPath" />
+                <ScalarProperty Name="PathType" ColumnName="PathType" />
+                <ScalarProperty Name="mmsPath" ColumnName="mmsPath" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sequences">
+            <EntityTypeMapping TypeName="zfy84Model.Sequence">
+              <MappingFragment StoreEntitySet="Sequences">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CurVal" ColumnName="CurVal" />
+                <ScalarProperty Name="Step" ColumnName="Step" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Servers">
+            <EntityTypeMapping TypeName="zfy84Model.Server">
+              <MappingFragment StoreEntitySet="Servers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IPaddress" ColumnName="IPaddress" />
+                <ScalarProperty Name="DocRetentionPeriod" ColumnName="DocRetentionPeriod" />
+                <ScalarProperty Name="SpaceAvailable" ColumnName="SpaceAvailable" />
+                <ScalarProperty Name="SpaceUsed" ColumnName="SpaceUsed" />
+                <ScalarProperty Name="StorePath" ColumnName="StorePath" />
+                <ScalarProperty Name="SaveDays" ColumnName="SaveDays" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staffs">
+            <EntityTypeMapping TypeName="zfy84Model.Staff">
+              <MappingFragment StoreEntitySet="Staff">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserLevel" ColumnName="UserLevel" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="LoginName" ColumnName="LoginName" />
+                <ScalarProperty Name="PassWord" ColumnName="PassWord" />
+                <ScalarProperty Name="CorpName" ColumnName="CorpName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="PolNo" ColumnName="PolNo" />
+                <ScalarProperty Name="DevNo" ColumnName="DevNo" />
+                <ScalarProperty Name="DevPwd" ColumnName="DevPwd" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StaffDepartments">
+            <EntityTypeMapping TypeName="zfy84Model.StaffDepartment">
+              <MappingFragment StoreEntitySet="StaffDepartment">
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="DepartName" ColumnName="DepartName" />
+                <ScalarProperty Name="ShowOrd" ColumnName="ShowOrd" />
+                <ScalarProperty Name="DepartLayer" ColumnName="DepartLayer" />
+                <ScalarProperty Name="IsShow" ColumnName="IsShow" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StaffRights">
+            <EntityTypeMapping TypeName="zfy84Model.StaffRight">
+              <MappingFragment StoreEntitySet="StaffRight">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="RightGroupID" ColumnName="RightGroupID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StaffRightHas">
+            <EntityTypeMapping TypeName="zfy84Model.StaffRightHa">
+              <MappingFragment StoreEntitySet="StaffRightHas">
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="RightGroupID" ColumnName="RightGroupID" />
+                <ScalarProperty Name="RightNameID" ColumnName="RightNameID" />
+                <ScalarProperty Name="RightName" ColumnName="RightName" />
+                <ScalarProperty Name="PolDepartmentID" ColumnName="PolDepartmentID" />
+                <ScalarProperty Name="Siteurl" ColumnName="Siteurl" />
+                <ScalarProperty Name="MenuYayer" ColumnName="MenuYayer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysNotes">
+            <EntityTypeMapping TypeName="zfy84Model.SysNote">
+              <MappingFragment StoreEntitySet="SysNote">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RightNameID" ColumnName="RightNameID" />
+                <ScalarProperty Name="OperateTypeID" ColumnName="OperateTypeID" />
+                <ScalarProperty Name="OperateDate" ColumnName="OperateDate" />
+                <ScalarProperty Name="IpAddr" ColumnName="IpAddr" />
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysNoteReads">
+            <EntityTypeMapping TypeName="zfy84Model.SysNoteRead">
+              <MappingFragment StoreEntitySet="SysNoteRead">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="rightnameid" ColumnName="rightnameid" />
+                <ScalarProperty Name="operatetypeid" ColumnName="operatetypeid" />
+                <ScalarProperty Name="operatename" ColumnName="operatename" />
+                <ScalarProperty Name="englishname" ColumnName="englishname" />
+                <ScalarProperty Name="operatedate" ColumnName="operatedate" />
+                <ScalarProperty Name="ipaddr" ColumnName="ipaddr" />
+                <ScalarProperty Name="polno" ColumnName="polno" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="rightName" ColumnName="rightName" />
+                <ScalarProperty Name="rightNameEng" ColumnName="rightNameEng" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysRecs">
+            <EntityTypeMapping TypeName="zfy84Model.SysRec">
+              <MappingFragment StoreEntitySet="SysRec">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ComputerName" ColumnName="ComputerName" />
+                <ScalarProperty Name="RightNameID" ColumnName="RightNameID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TimingExportExecels">
+            <EntityTypeMapping TypeName="zfy84Model.TimingExportExecel">
+              <MappingFragment StoreEntitySet="TimingExportExecel">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ExportTime" ColumnName="ExportTime" />
+                <ScalarProperty Name="SenderEmail" ColumnName="SenderEmail" />
+                <ScalarProperty Name="SenderEmailPwd" ColumnName="SenderEmailPwd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserProfiles">
+            <EntityTypeMapping TypeName="zfy84Model.UserProfile">
+              <MappingFragment StoreEntitySet="UserProfile">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_Membership">
+            <EntityTypeMapping TypeName="zfy84Model.webpages_Membership">
+              <MappingFragment StoreEntitySet="webpages_Membership">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ConfirmationToken" ColumnName="ConfirmationToken" />
+                <ScalarProperty Name="IsConfirmed" ColumnName="IsConfirmed" />
+                <ScalarProperty Name="LastPasswordFailureDate" ColumnName="LastPasswordFailureDate" />
+                <ScalarProperty Name="PasswordFailuresSinceLastSuccess" ColumnName="PasswordFailuresSinceLastSuccess" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PasswordChangedDate" ColumnName="PasswordChangedDate" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="PasswordVerificationToken" ColumnName="PasswordVerificationToken" />
+                <ScalarProperty Name="PasswordVerificationTokenExpirationDate" ColumnName="PasswordVerificationTokenExpirationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_OAuthMembership">
+            <EntityTypeMapping TypeName="zfy84Model.webpages_OAuthMembership">
+              <MappingFragment StoreEntitySet="webpages_OAuthMembership">
+                <ScalarProperty Name="Provider" ColumnName="Provider" />
+                <ScalarProperty Name="ProviderUserId" ColumnName="ProviderUserId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_Roles">
+            <EntityTypeMapping TypeName="zfy84Model.webpages_Roles">
+              <MappingFragment StoreEntitySet="webpages_Roles">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="webpages_UsersInRoles">
+            <EntityTypeMapping TypeName="zfy84Model.webpages_UsersInRoles">
+              <MappingFragment StoreEntitySet="webpages_UsersInRoles">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkStations">
+            <EntityTypeMapping TypeName="zfy84Model.WorkStation">
+              <MappingFragment StoreEntitySet="WorkStation">
+                <ScalarProperty Name="WorkStationname" ColumnName="WorkStationname" />
+                <ScalarProperty Name="WorkStationIP" ColumnName="WorkStationIP" />
+                <ScalarProperty Name="WebAdd" ColumnName="WebAdd" />
+                <ScalarProperty Name="SaveDays" ColumnName="SaveDays" />
+                <ScalarProperty Name="StationType" ColumnName="StationType" />
+                <ScalarProperty Name="StorePath" ColumnName="StorePath" />
+                <ScalarProperty Name="VirtualPath" ColumnName="VirtualPath" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkStationPaths">
+            <EntityTypeMapping TypeName="zfy84Model.WorkStationPath">
+              <MappingFragment StoreEntitySet="WorkStationPath">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="WorkStationID" ColumnName="WorkStationID" />
+                <ScalarProperty Name="StorePath" ColumnName="StorePath" />
+                <ScalarProperty Name="VirtualPath" ColumnName="VirtualPath" />
+                <ScalarProperty Name="Ord" ColumnName="Ord" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkStationPathInfoes">
+            <EntityTypeMapping TypeName="zfy84Model.WorkStationPathInfo">
+              <MappingFragment StoreEntitySet="WorkStationPathInfo">
+                <ScalarProperty Name="WorkStationPathID" ColumnName="WorkStationPathID" />
+                <ScalarProperty Name="WorkStationID" ColumnName="WorkStationID" />
+                <ScalarProperty Name="WorkStationName" ColumnName="WorkStationName" />
+                <ScalarProperty Name="WorkStationIP" ColumnName="WorkStationIP" />
+                <ScalarProperty Name="StorePath" ColumnName="StorePath" />
+                <ScalarProperty Name="VirtualPath" ColumnName="VirtualPath" />
+                <ScalarProperty Name="Ord" ColumnName="Ord" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Importance Level Report";
+}
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">Date</span>
+                        <input type="text" class="form-control" id="txt_DateFrom" name="txt_DateFrom" placeholder="FROM (12/31/9999)" /><input type="text" class="form-control" id="txt_DateTo" name="txt_DateTo" placeholder="TO (12/31/9999)" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Department</span>
+                        <select class="form-control" id="sel_dept" name="sel_dept">
+                            <option value="">select department</option>
+                        </select>
+                    </div>
+                    <br />
+                    <span class="btn btn-sm btn-primary pull-right">get report</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="head1 grad2">
+    <span class="btn btn-sm"><span class="glyphicon glyphicon-export"></span> Export To Excel</span>
+    <span class="btn btn-sm"><span class="glyphicon glyphicon-export"></span> Export To PDF</span>
+    <span class="btn btn-sm"><span class="glyphicon glyphicon-envelope"></span> Email Report</span>
+    <span class="btn btn-sm"><span class="glyphicon glyphicon-print"></span> Print Report</span>
+    <span class="btn btn-sm"><span class="glyphicon glyphicon-floppy-save"></span> Download Report</span>
+</div>
+<table class="table table-striped">
+    <tr>
+        <th>Level</th>
+        <th>Video Count</th>
+    </tr>
+    <tr>
+        <td>High</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Middle</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Low</td>
+        <td>200</td>
+    </tr>
+</table>

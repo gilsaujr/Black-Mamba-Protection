@@ -1,0 +1,22 @@
+﻿@using WebMatrix.Data
+@using WebMatrix.WebData
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
+    @Styles.Render("~/css/main.css")
+</head>
+<body>
+    @Html.Partial("HeaderLogin")
+    @RenderBody()
+
+    @Scripts.Render("https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
+    @Scripts.Render("https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js")
+    @Scripts.Render("~/scripts/global.js")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

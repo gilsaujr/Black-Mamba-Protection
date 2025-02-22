@@ -1,0 +1,37 @@
+﻿@using BMP;
+@model List<Device>
+
+<table class="table table-striped">
+    <tr>
+        <th>#</th>
+        <th>Device No</th>
+        <th>Police No</th>
+        <th>Last Connected</th>
+        <th>Videos Last Uploaded</th>
+        <th>Status</th>
+        <th class="text-center">Actions</th>
+    </tr>
+    @{  int dCount = 0;
+        foreach(Device device in Model)
+        {
+            dCount++;
+            
+            <tr>
+                <td>@dCount</td>
+                <td>@device.DevNo</td>
+                <td>@device.PolNo</td>
+                <td>@device.LastConnected</td>
+                <td>@device.VideosLastUploaded</td>
+                <td><div>@device.DeviceStatus</div>
+                    <div class="progress">
+                      <div class="progress-bar progress-bar-striped active" role="progressbar"
+                      aria-valuenow="@device.DeviceStatusProgress" aria-valuemin="0" aria-valuemax="100" style="width:@device.DeviceStatusProgress%">
+                        @device.DeviceStatusProgress%
+                      </div>
+                    </div>
+                </td>
+                <td class="text-center"><a href="#" class="glyphicon glyphicon-eye-open" title="view details"></a></td>
+            </tr>
+        }
+    }
+</table>

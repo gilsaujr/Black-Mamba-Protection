@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "User Rights";
+}
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<span class="btn btn-sm btn-primary pull-right"><span class="glyphicon glyphicon-plus"></span> Add User Role</span>
+<table class="table table-striped">
+    <tr>
+        <th>Role</th>
+        <th>Rights</th>
+        <th>Actions</th>
+    </tr>
+    <tr>
+        <td>General User</td>
+        <td>
+            <input type="checkbox" /> Run Reports
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" /> Manage Storage
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" /> View Only Own Videos
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" /> Edit Videos
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" /> Manage Users
+        </td>
+        <td>
+            <span class="glyphicon glyphicon-pencil" title="edit"></span>
+            <span class="glyphicon glyphicon-remove" title="remove"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>Administrator</td>
+        <td>
+            <input type="checkbox" /> Run Reports
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" /> Manage Storage
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" /> View Only Own Videos
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" /> Edit Videos
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" /> Manage Users
+        </td>
+        <td>
+            <span class="glyphicon glyphicon-pencil" title="edit"></span>
+            <span class="glyphicon glyphicon-remove" title="remove"></span>
+        </td>
+    </tr>
+</table>
+
+<div class="text-center"><span class="btn btn-sm btn-primary">Save</span></div>
